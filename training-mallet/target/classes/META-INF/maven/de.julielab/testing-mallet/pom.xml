@@ -31,14 +31,60 @@
     </dependency>
     <dependency>
     	<groupId>de.julielab</groupId>
+    	<artifactId>julielab-java-utilities</artifactId>
+    	<version>1.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>de.julielab</groupId>
     	<artifactId>jcore-mallet-2.0.9</artifactId>
     	<version>2.1.0</version>
     </dependency>
   </dependencies>
+  
+  	<build>
+  		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>de.julielab.testing_mallet.TestingMalletMain</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+		</plugin>
+		<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.1.0</version>
+            <configuration>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+				<archive>
+						<manifest>
+							<mainClass>de.julielab.testing_mallet.TestingMalletMain</mainClass>
+						</manifest>
+				</archive>					
+            </configuration>
+            <executions>
+                <execution>
+                    <id>assemble-all</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>single</goal>
+                    </goals>
+                </execution>
+            </executions>
+        	</plugin>
+       	 </plugins>
+	</build>
+  
   <parent>
   	<groupId>de.julielab</groupId>
   	<artifactId>julielab-parent</artifactId>
   	<version>2.0.1</version>
   </parent>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
 </project>

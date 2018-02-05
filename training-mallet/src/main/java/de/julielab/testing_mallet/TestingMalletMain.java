@@ -60,6 +60,8 @@ public class TestingMalletMain {
 		
 		String modelFileDirectory = config.get(3);
 		
+		String stopWordsFile = config.get(4);
+		
 		// for more than one file to read in
 		String[] files = null;
 		if (fileName.contains(",")) {
@@ -67,6 +69,16 @@ public class TestingMalletMain {
 			for (int i = 0; i < files.length; i++) {
 				fileName = fileName.concat(files[i] + ", ");
 			}
+		}
+		
+		// for a folder directory and its inherited files
+		if (!(fileName.endsWith(".xml.gz") || fileName.endsWith(".xml.gzip") || 
+				fileName.endsWith(".xml.zip")|| fileName.endsWith(".xml"))) {
+			int numberOfFiles = 0;
+			if (args.length == 3) {
+				numberOfFiles = Integer.parseInt(args[2]);
+			}
+			files = getFilesFromFolder(fileName, numberOfFiles);
 		}
 		
 		// logging
@@ -77,8 +89,8 @@ public class TestingMalletMain {
 		ptmLogger.addHandler(fhandler);
 		fhandler.flush();
 		
-		String logData = "JULIELab-TM-LOG:" + "\n" 
-								+ "JULIELab-TM-LOG: Configuration ID: " + configId + "\n"
+		String logData = "JULIELab-TM-LOG: Configuration ID: " + configId + "\n"
+								+ "\n"
 								+ "JULIELab-TM-LOG: XML data directory: " + fileName + "\n"
 								+ "JULIELab-TM-LOG: iterated XML-item: " + forEach + "\n"
 								+ "JULIELab-TM-LOG: extracted data from XML: " + fieldPaths.get(0) + ", " + fieldPaths.get(1) + "\n"
@@ -98,6 +110,7 @@ public class TestingMalletMain {
 		ReadingIn read = new ReadingIn();
 		
 		InstanceList instances = null;
+		// for more than one file
 		if (files != null) {
 			List<String> foundItems = null;
 			List<String> allFoundItems = read.data2Items(files[0], forEach, fieldPaths);
@@ -105,11 +118,12 @@ public class TestingMalletMain {
 				foundItems = read.data2Items(files[i], forEach, fieldPaths);
 				allFoundItems.addAll(foundItems);
 			}
-			instances = read.items2Instances(allFoundItems);
+			instances = read.items2Instances(allFoundItems, stopWordsFile);
 			logData = logData.concat("\n" + "JULIELab-TM-LOG: Total Items found: " + allFoundItems.size());
+		// for one file
 		} else {
 		List<String> foundItems = read.data2Items(fileName, forEach, fieldPaths);
-		instances = read.items2Instances(foundItems);
+		instances = read.items2Instances(foundItems, stopWordsFile);
 		}
 		System.out.println("JULIELab-TM-LOG: instances created");
 		fhandler.flush();
@@ -147,7 +161,25 @@ public class TestingMalletMain {
 		logData = logData.concat("\n" + malletMain.externalLogData + "\n");
 		ptmLogger.info(logData);
 		fhandler.flush();
-		
+	}
+	
+	public static String[] getFilesFromFolder(String folderName, int numberOfFiles) {
+		File folder = new File (folderName); 
+		if (numberOfFiles != 0) {
+			File[] fileList = folder.listFiles();
+			String[] files = new String[numberOfFiles];
+			for (int i = 0; i < numberOfFiles; i++) {
+				files[i] = fileList[i].getPath();
+			}
+			return files;
+		} else {
+			File[] fileList = folder.listFiles();
+			String[] files = new String[fileList.length];
+			for (int i = 0; i < fileList.length; i++) {
+				files[i] = fileList[i].getPath();
+			}
+			return files;
+		}
 	}
 	
 	public void setLogData(String log) {

@@ -86,17 +86,32 @@ public class ReadingIn {
 		// end of (modified) JulieXMLToolsCLIRecords Source Code
 	}
 		
-	public InstanceList items2Instances(List<String> foundItems) {		
+	public InstanceList items2Instances(List<String> foundItems, String stopWordsFile) {		
 		// -====== modified TopicModel Source Code: get instances =====-
 		
 		// Begin by importing documents from text to feature sequences
 		ArrayList<Pipe> pipeList = new ArrayList<Pipe>();
-
+		
+		// For compatibility: get stoplist from resources folder
+//		ClassLoader classLoader = getClass().getClassLoader();
+//		try {
+//			File stopwordsFile = new File(classLoader.getResource("en.txt").toURI());
+//			// Pipes: lowercase, tokenize, remove stopwords, map to features
+//			pipeList.add( new CharSequenceLowercase() );
+//			pipeList.add( new CharSequence2TokenSequence(Pattern.compile("\\p{L}[\\p{L}\\p{P}]+\\p{L}")) );
+//			pipeList.add( new TokenSequenceRemoveStopwords(stopwordsFile, "UTF-8", false, false, false) );
+//			pipeList.add( new TokenSequence2FeatureSequence() );
+//		} catch (URISyntaxException e) {
+//				e.printStackTrace();
+//		}
+		
+//		InputStream stopwordsStream = new File(classLoader.getResourceAsStream("en.txt"));
 		// Pipes: lowercase, tokenize, remove stopwords, map to features
 		pipeList.add( new CharSequenceLowercase() );
 		pipeList.add( new CharSequence2TokenSequence(Pattern.compile("\\p{L}[\\p{L}\\p{P}]+\\p{L}")) );
-		pipeList.add( new TokenSequenceRemoveStopwords(new File("D:/mallet-2.0.7/mallet-2.0.7/stoplists/en.txt"), "UTF-8", false, false, false) );
+		pipeList.add( new TokenSequenceRemoveStopwords(new File (stopWordsFile), "UTF-8", false, false, false) );
 		pipeList.add( new TokenSequence2FeatureSequence() );
+
 
 		InstanceList instances = new InstanceList (new SerialPipes(pipeList));
 		
@@ -126,6 +141,11 @@ public class ReadingIn {
 //		Object text2 = doc2.getData();
 //		System.out.print(text2);
 
+	}
+	
+	
+	public void unzipFile(String fileName) {
+		
 	}
 	
 	public String getLogData() {
