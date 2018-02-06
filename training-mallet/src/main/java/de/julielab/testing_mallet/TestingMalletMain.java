@@ -58,7 +58,15 @@ public class TestingMalletMain {
 		double beta = Double.parseDouble(args2Split[2]);
 		int trainingIterations = Integer.parseInt(args2Split[3]);
 		int numberOfThreads = Integer.parseInt(args2Split[4]);
-		int optimizeInterval = Integer.parseInt(args2Split[5]);
+		int optimizeInterval = 50;
+		if (args2Split.length == 6) {
+			optimizeInterval = Integer.parseInt(args2Split[5]);
+		}
+		boolean optimize = true;
+		if (optimizeInterval == 0) {
+			optimize = false;
+		}
+
 		
 		String modelFileDirectory = config.get(3);
 		
@@ -101,6 +109,7 @@ public class TestingMalletMain {
 								+ "JULIELab-TM-LOG: chosen Dirichlet-alpha: " + alpha + "\n"
 								+ "JULIELab-TM-LOG: chosen Dirichlet-beta: " + beta + "\n"
 								+ "JULIELab-TM-LOG: chosen training iterations: " + trainingIterations + "\n"
+								+ "JULIELab-TM-LOG: chosen optimization: " + optimize + "; at interval " + optimizeInterval + "\n"
 								+ "\n"
 								+ "JULIELab-TM-LOG: model file directory for testing the model: " + modelFileDirectory + "\n";
 		
