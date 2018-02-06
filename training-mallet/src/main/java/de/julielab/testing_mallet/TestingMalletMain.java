@@ -8,6 +8,7 @@ import de.julielab.testing_mallet.TrainingModel;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,6 +58,7 @@ public class TestingMalletMain {
 		double beta = Double.parseDouble(args2Split[2]);
 		int trainingIterations = Integer.parseInt(args2Split[3]);
 		int numberOfThreads = Integer.parseInt(args2Split[4]);
+		int optimizeInterval = Integer.parseInt(args2Split[5]);
 		
 		String modelFileDirectory = config.get(3);
 		
@@ -115,6 +117,8 @@ public class TestingMalletMain {
 			List<String> foundItems = null;
 			List<String> allFoundItems = read.data2Items(files[0], forEach, fieldPaths);
 			for (int i = 1; i < files.length; i++){
+				System.out.println("JULIELab-TM-LOG: Attempt to process file no " + i + 
+						" of total " +  files.length + ": " + files[i]);
 				foundItems = read.data2Items(files[i], forEach, fieldPaths);
 				allFoundItems.addAll(foundItems);
 			}
@@ -128,8 +132,8 @@ public class TestingMalletMain {
 		System.out.println("JULIELab-TM-LOG: instances created");
 		fhandler.flush();
 		
-		TrainingModel model = new TrainingModel(instances, numTopics, alpha, beta, trainingIterations,
-												numberOfThreads, modelFileDirectory);
+		TrainingModel model = new TrainingModel(instances, numTopics, alpha, beta, trainingIterations, 
+				optimizeInterval, numberOfThreads, modelFileDirectory);
 		System.out.println("JULIELab-TM-LOG: model trained and written");
 		fhandler.flush();
 		
@@ -164,19 +168,29 @@ public class TestingMalletMain {
 	}
 	
 	public static String[] getFilesFromFolder(String folderName, int numberOfFiles) {
+		FilenameFilter xmlFilter = new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				if (name.endsWith(".xml.gz") || name.endsWith(".xml.zip")
+						|| name.endsWith(".xml.gzip") || name.endsWith(".xml")) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		};
 		File folder = new File (folderName); 
 		if (numberOfFiles != 0) {
-			File[] fileList = folder.listFiles();
+			File[] fileList = folder.listFiles(xmlFilter);
 			String[] files = new String[numberOfFiles];
 			for (int i = 0; i < numberOfFiles; i++) {
 				files[i] = fileList[i].getPath();
 			}
 			return files;
 		} else {
-			File[] fileList = folder.listFiles();
+			File[] fileList = folder.listFiles(xmlFilter);
 			String[] files = new String[fileList.length];
 			for (int i = 0; i < fileList.length; i++) {
-				files[i] = fileList[i].getPath();
+					files[i] = fileList[i].getPath();
 			}
 			return files;
 		}

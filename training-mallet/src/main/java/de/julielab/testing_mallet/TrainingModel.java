@@ -24,7 +24,7 @@ public class TrainingModel {
 		private String logData = "";
 
 		public TrainingModel(InstanceList instances, int numTopics, double alphaSum, double beta, 
-				int trainingIterations, int numberOfThreads, String modelFileDirectory) 
+				int trainingIterations, int optimizeInterval, int numberOfThreads, String modelFileDirectory) 
 				throws IOException {
 			
 			ParallelTopicModel model = new ParallelTopicModel(numTopics, alphaSum, beta);
@@ -38,6 +38,7 @@ public class TrainingModel {
 			// Run the model for 50 iterations and stop (this is for testing only, 
 			//  for real applications, use 1000 to 2000 iterations)
 			model.setNumIterations(trainingIterations);
+			model.setOptimizeInterval(optimizeInterval);
 			model.estimate();
 
 			// Show the words and topics in the first instance
