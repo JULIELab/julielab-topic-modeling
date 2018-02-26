@@ -1,4 +1,3 @@
-// modified version taken from testing-mallet version 1.1.0
 
 package de.julielab.testing_mallet;
 

@@ -1,4 +1,3 @@
-// modified version taken from testing-mallet version 1.1.0
 
 package de.julielab.testing_mallet;
 
@@ -7,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 import java.util.TreeSet;
 
@@ -18,13 +18,14 @@ import cc.mallet.types.IDSorter;
 import cc.mallet.types.Instance;
 import cc.mallet.types.InstanceList;
 import cc.mallet.types.LabelSequence;
+import cc.mallet.types.TokenSequence;
 
 public class TrainingModel {
 	
 		private String logData = "";
 
 		public TrainingModel(InstanceList instances, int numTopics, double alphaSum, double beta, 
-				int trainingIterations, int numberOfThreads, String modelFileDirectory) 
+				int trainingIterations, int optimizeInterval, int numberOfThreads, String modelFileDirectory) 
 				throws IOException {
 			
 			ParallelTopicModel model = new ParallelTopicModel(numTopics, alphaSum, beta);
@@ -38,6 +39,7 @@ public class TrainingModel {
 			// Run the model for 50 iterations and stop (this is for testing only, 
 			//  for real applications, use 1000 to 2000 iterations)
 			model.setNumIterations(trainingIterations);
+			model.setOptimizeInterval(optimizeInterval);
 			model.estimate();
 
 			// Show the words and topics in the first instance
@@ -94,7 +96,13 @@ public class TrainingModel {
 
 			// Create a new instance named "test instance" with empty target and source fields.
 			InstanceList testing = new InstanceList(instances.getPipe());
-			testing.addThruPipe(new Instance(topicZeroText.toString(), null, "test instance", null));
+			ReadingIn read = new ReadingIn();
+			String text = topicZeroText.toString();
+			List<String> textInList = new ArrayList<String>();
+			textInList.add(text);
+			List<TokenSequence> lemmata = read.text2Lemmata(textInList);
+			testing.addThruPipe(new Instance(lemmata.get(0), null, "test instance", null));
+//			testing.addThruPipe(new Instance(topicZeroText.toString(), null, "test instance", null));
 
 			TopicInferencer inferencer = model.getInferencer();
 			double[] testProbabilities = inferencer.getSampledDistribution(testing.get(0), 10, 1, 5);
