@@ -1,4 +1,3 @@
-// modified version taken from testing-mallet version 1.1.0
 
 package de.julielab.testing_mallet;
 
@@ -16,5 +15,9 @@ public class UsingModel {
 //		String alphabetString = 
 				alphabet.toString();
 //		System.out.println(alphabetString);
+//		topicModelTest.printDenseDocumentTopics(out);
+//		topicModelTest.getDocumentTopics(normalized, smoothed);
+//		topicModelTest.getTopicDocuments(smoothing);
+//		topicModelTest.set
 	}
 }
