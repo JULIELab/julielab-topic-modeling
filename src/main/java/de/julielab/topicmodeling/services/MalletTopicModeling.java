@@ -17,6 +17,8 @@ import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.JCasFactory;
 import org.apache.uima.jcas.JCas;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import cc.mallet.pipe.Pipe;
 import cc.mallet.pipe.SerialPipes;
@@ -41,7 +43,9 @@ import de.julielab.xml.JulieXMLTools;
 
 public class MalletTopicModeling implements ITopicModeling {
 
-	XMLConfiguration xmlConfig;
+	private static final Logger LOGGER = LoggerFactory.getLogger(MalletTopicModeling.class);
+	
+	public XMLConfiguration xmlConfig;
 	
 	public MalletTopicModeling(String configFile) throws ConfigurationException {
 		Parameters params = new Parameters();
@@ -61,9 +65,17 @@ public class MalletTopicModeling implements ITopicModeling {
 		int numIterations = xmlConfig.getInt("train.parameters.parameter.numIterations");
 		int optimizationInterval = xmlConfig.getInt("train.parameters.parameter.optimizationInterval");
 		
+		LOGGER.info("Chosen number of topics: " + numTopics + "\n"
+						+ "Chosen Dirichlet-alpha: " + alphaSum + "\n"
+						+ "Chosen Dirichlet-beta: " + beta + "\n"
+						+ "Chosen training iterations: " + numIterations + "\n"
+						+ "Chosen optimization interval (if 0, optim. is deactivated): " 
+						+ optimizationInterval + "\n");
+		
 		ParallelTopicModel malletParallelModel = new ParallelTopicModel(numTopics, alphaSum, beta);
 		Model model = new Model();
 		try {
+			LOGGER.info("Start preprocessing");
 			InstanceList instances = preprocess(docs);
 			malletParallelModel.addInstances(instances);			 
 			malletParallelModel.setNumThreads(numThreads);
@@ -74,12 +86,14 @@ public class MalletTopicModeling implements ITopicModeling {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		LOGGER.info("Model is trained");
 		return model;
 	}
 	
 	public void saveModel(Model model, File file) {
 		ParallelTopicModel newModel = model.malletModel;
 		newModel.write(file);
+		LOGGER.info("Model is saved in " + file.getName());
 	}
 	
 	public List<Document> readDocuments(File file) {
@@ -127,6 +141,7 @@ public class MalletTopicModeling implements ITopicModeling {
 				}
 				docs.add(doc);
 				}
+			LOGGER.info("Total citations found: " + docs.size());
 			return docs;
 	}		
 	
@@ -190,6 +205,7 @@ public class MalletTopicModeling implements ITopicModeling {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		LOGGER.info("JCoRe preprocessing finished");
 		return allLemmata;
 	}
 	
@@ -199,8 +215,9 @@ public class MalletTopicModeling implements ITopicModeling {
 		pipeList.add( new TokenSequenceRemoveNonAlpha() );
 		pipeList.add( new TokenSequence2FeatureSequence() );
 		InstanceList instances = new InstanceList (new SerialPipes(pipeList));
-		ArrayIterator dataListIterator = new ArrayIterator (data);
+		ArrayIterator dataListIterator = new ArrayIterator(data);
 		instances.addThruPipe(dataListIterator);
+		LOGGER.info("MALLeT instances created");
 		return instances;
 	}
 	
@@ -216,5 +233,15 @@ public class MalletTopicModeling implements ITopicModeling {
 			tokenIterator.next();
 		}
 		return lemmata;
-	}	
+	}
+	
+	public void mapPubmedIdToMalletId(List<Document> docs, Model model) {
+		for (int i = 0; i < docs.size(); i++) {
+			Document doci = docs.get(i);
+			String dociId = doci.id;
+			LOGGER.info("Attempting to map PMID " + dociId + " to mallet doc " + i);
+			model.pubmedIdModelId = new HashMap<String, Object>();
+			model.pubmedIdModelId.put(dociId, i);
+		}
+	}
 }

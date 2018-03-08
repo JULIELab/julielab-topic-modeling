@@ -1,6 +1,7 @@
 package de.julielab.topicmodeling.services;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.configuration2.ex.ConfigurationException;
@@ -22,16 +23,18 @@ public class MalletTopicModelingTest {
 	//Test Reader
 	@Test
 	public void testReadDocumentsNotEmpty() throws ConfigurationException {
-		MalletTopicModeling tm = new MalletTopicModeling("D:/jUnit_tests/config_template.xml");
-		File file = new File("D:/jUnit_tests/pubmedsample18n0001.xml.gz");
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
 		assertNotEquals(0, docs.size());
 	}
 	
 	@Test
 	public void testReadDocumentsFirstThreeDocs() throws ConfigurationException {
-		MalletTopicModeling tm = new MalletTopicModeling("D:/jUnit_tests/config_template.xml");
-		File file = new File("D:/jUnit_tests/pubmedsample18n0001.xml.gz");
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
 		
 		Document doc0 = docs.get(0);
@@ -71,8 +74,9 @@ public class MalletTopicModelingTest {
 	
 	@Test
 	public void testReadDocumentsDocCount() throws ConfigurationException {
-		MalletTopicModeling tm = new MalletTopicModeling("D:/jUnit_tests/config_template.xml");
-		File file = new File("D:/jUnit_tests/pubmedsample18n0001.xml.gz");
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
 		
 		int docCount = 0;
@@ -98,10 +102,10 @@ public class MalletTopicModelingTest {
 	
 	@Test
 	public void testTrain() throws ConfigurationException {
-		MalletTopicModeling tm = new MalletTopicModeling("D:/jUnit_tests/config_template.xml");
+		MalletTopicModeling tm = new MalletTopicModeling("src/test/resources/config_template.xml");
 		Configuration config = new Configuration();
 		
-		File file = new File("D:/jUnit_tests/pubmedsample18n0001.xml.gz");
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
 		Model model = tm.train(config, docs);
 		ParallelTopicModel malletParallelTopicModel = model.malletModel;
@@ -118,14 +122,14 @@ public class MalletTopicModelingTest {
 	
 	@Test
 	public void testSaveModelReadModel() throws ConfigurationException {
-		MalletTopicModeling tm = new MalletTopicModeling("D:/jUnit_tests/config_template.xml");
+		MalletTopicModeling tm = new MalletTopicModeling("src/test/resources/config_template.xml");
 		Configuration config = new Configuration();
 		
-		File file = new File("D:/jUnit_tests/pubmedsample18n0001.xml.gz");
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
 		Model model = tm.train(config, docs);
 		
-		File modelFile = new File("D:/jUnit_tests/test_model");
+		File modelFile = new File("src/test/resources/test_model");
 		tm.saveModel(model, modelFile);
 		Model savedModel = tm.readModel(modelFile);
 		ParallelTopicModel savedMalletModel = savedModel.malletModel;
@@ -136,10 +140,10 @@ public class MalletTopicModelingTest {
 	@Test
 	public void testNoOptimization() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(
-				"D:/jUnit_tests/config_template_no_optimization.xml");
+				"src/test/resources/config_template_no_optimization.xml");
 		Configuration config = new Configuration();
 		
-		File file = new File("D:/jUnit_tests/pubmedsample18n0001.xml.gz");
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
 		Model model = tm.train(config, docs);
 		int malletOptimizationSetting = model.malletModel.optimizeInterval;
@@ -148,5 +152,20 @@ public class MalletTopicModelingTest {
 		assertTrue(malletOptimizationSetting == 0);
 		assertTrue(malletAlphaSumSetting == 1.0);
 		assertTrue(malletBetaSetting == 0.1);
+	}
+	
+	@Test
+	public void testMapPubmedIdToMalletId() throws ConfigurationException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template_no_optimization.xml");
+		Configuration config = new Configuration();
+		
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
+		List<Document> docs = tm.readDocuments(file);
+		Model model = tm.train(config, docs);
+		tm.mapPubmedIdToMalletId(docs, model);
+		HashMap<String, Object> map = model.pubmedIdModelId;
+		assertEquals(map.get("1669026"), 1);
+		assertEquals("973217", map.get(0));
 	}
 }
