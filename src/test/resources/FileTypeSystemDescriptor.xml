@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>FileTypeSystemDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+  <imports>
+    <import name="de.julielab.jcore.types.jcore-document-meta-pubmed-types"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>de.julielab.jcore.types.PubmedXMLFile</name>
+      <description>Type for Pubmed XML files that contain multiple medline citations.</description>
+      <supertypeName>uima.tcas.DocumentAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>de.julielab.jcore.types.MedlineCitation</name>
+      <description>One Medline citation (i.e. XML fragment that contains title, abstract text, PMID etc.) out of a Pubmed XML File.</description>
+      <supertypeName>uima.cas.String</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
