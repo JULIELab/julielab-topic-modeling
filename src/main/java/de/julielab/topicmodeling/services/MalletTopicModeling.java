@@ -3,10 +3,14 @@ package de.julielab.topicmodeling.services;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.commons.configuration2.XMLConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
@@ -27,6 +31,7 @@ import cc.mallet.pipe.TokenSequence2FeatureSequence;
 import cc.mallet.pipe.TokenSequenceRemoveNonAlpha;
 import cc.mallet.pipe.TokenSequenceRemoveStopwords;
 import cc.mallet.pipe.iterator.ArrayIterator;
+import cc.mallet.topics.MarginalProbEstimator;
 import cc.mallet.topics.ParallelTopicModel;
 import cc.mallet.topics.TopicInferencer;
 import cc.mallet.types.Instance;
@@ -38,7 +43,6 @@ import de.julielab.jcore.types.Token;
 import de.julielab.topicmodeling.businessobjects.Configuration;
 import de.julielab.topicmodeling.businessobjects.Document;
 import de.julielab.topicmodeling.businessobjects.Model;
-import de.julielab.topicmodeling.businessobjects.Query;
 import de.julielab.topicmodeling.businessobjects.TMSearchResult;
 import de.julielab.topicmodeling.businessobjects.Topic;
 import de.julielab.xml.JulieXMLConstants;
@@ -95,7 +99,7 @@ public class MalletTopicModeling implements ITopicModeling {
 			e.printStackTrace();
 		}
 		LOGGER.info("Model is trained");
-		mapPubmedIdToMalletId(docs, model);
+		mapMalletIdToPubmedId(docs, model);
 		LOGGER.info("PubMed citation IDs (PMIDs) are mapped to Mallet document IDs");
 		return model;
 	}
@@ -120,9 +124,10 @@ public class MalletTopicModeling implements ITopicModeling {
 			};
 			List<Document> docs = new ArrayList<Document>();
 			File[] xmlFiles = file.listFiles(xmlFilter);
-			for (int i = 0; i < xmlFiles.length; i++) {
+			int fileCount = xmlConfig.getInteger("read.parametes.files.number", xmlFiles.length);
+			for (int i = 0; i < fileCount; i++) {
 				LOGGER.info("Attempt to read " + xmlFiles[i].getName() + ", no. " + (i + 1)  
-							+ " of total " + xmlFiles.length);
+							+ " of total " + fileCount);
 				List<Document> docsFileI = readDocuments(xmlFiles[i]);
 				for (int j = 0; j < docsFileI.size(); j++) {
 					docs.add(docsFileI.get(j));
@@ -173,11 +178,114 @@ public class MalletTopicModeling implements ITopicModeling {
 		}
 	}		
 	
-	//User
-	public TMSearchResult search(Query query, Model model) {
+	//User	
+	//	with Jama Interface
+//	public TMSearchResult search(Document query, Model model) {
+//		TMSearchResult result = new TMSearchResult();
+//		Map<String, List<Topic>> queryInstance = inferLabel(query, model);
+//		List<Topic> queryTopics = queryInstance.get(query.id);
+//		double[] queryProbabilities = new double[queryTopics.size()]; 
+//		for (int i = 0; i < queryTopics.size(); i++) {
+//			double queryProbability = queryTopics.get(i).probability;
+//			queryProbabilities[i] = queryProbability;
+//		}
+//		Matrix queryVector = new Matrix(queryProbabilities, queryTopics.size());
+//		HashMap<Integer, Double> cosineSimilarities = new HashMap<Integer, Double>();
+//		
+//		ParallelTopicModel malletModel = model.malletModel;
+////		List<Entry<Integer, Double>> list = new LinkedList<Entry<Integer, Double>>();
+//		double[][] documentsTopics = malletModel.getDocumentTopics(false, false);
+//		for (int i = 0 ; i < documentsTopics.length; i++) {
+//			double[] documentTopics = documentsTopics[i];
+//			Matrix documentVector = new Matrix(documentTopics, queryTopics.size());
+//			double cosineSimilarity = computeSimilarity(queryVector, documentVector);
+//			cosineSimilarities.put(i, cosineSimilarity);
+////			list.add(e);
+//		}
+//		
+////		Map<Integer, Double> sortedSimilarities = sortByComparator(cosineSimilarities, false);
+//		List<Entry<Integer, Double>> list = new LinkedList<Entry<Integer, Double>>(
+//				cosineSimilarities.entrySet());
+//
+//        Collections.sort(list, new Comparator<Entry<Integer, Double>>() {
+//            public int compare(Entry<Integer, Double> o1,
+//                    Entry<Integer, Double> o2) {
+//                if (order) {
+//                    return o1.getValue().compareTo(o2.getValue());
+//                } else {
+//                    return o2.getValue().compareTo(o1.getValue());
+//                }
+//            }
+//        });
+//        // Maintaining insertion order with the help of LinkedList
+//        int displayedHits = xmlConfig.getInt("search.results.displayedHits", list.size());
+//        for(int i = 0; i < displayedHits; i++) {
+////            sortedMap.put(entry.getKey(), entry.getValue());
+//        	Entry<Integer, Double> entry = list.get(i);
+//            result.malletId.add(entry.getKey());
+//            result.probabilities.add(entry.getValue());
+//        }
+////		for (int i = 0 ; i < displayedHits; i++) {
+////			if (cosineSimilarities.size() > (cosineSimilarities.size() - displayedHits)) {
+////				result.probabilities.add(sortedSimilarities.get(i));
+////				result.malletId.add(sortedSimilarities.);
+////			}
+////		}
+//		return result;
+//	}
+	
+	//without Jama interface
+	public TMSearchResult search(Document query, Model model) {
+		double probabilityThreshold = xmlConfig.getDouble("search.parameters.parameter"
+				+ ".probabilityThreshold"); 
+		
 		TMSearchResult result = new TMSearchResult();
+		result.malletId = new ArrayList<Integer>();
+		result.probabilities = new ArrayList<Double>();
+		result.PubmedID = new ArrayList<String>();
+		
+		Map<String, List<Topic>> queryInstance = inferLabel(query, model);
+		List<Topic> queryTopics = queryInstance.get(query.id);
+		double[] queryProbabilities = new double[queryTopics.size()];
+		List<Integer> relevantProbabilitiesIndex = new ArrayList<Integer>();
+		for (int i = 0; i < queryTopics.size(); i++) {
+			if (queryTopics.get(i).probability >= probabilityThreshold) {
+				relevantProbabilitiesIndex.add(i);
+				double queryProbability = queryTopics.get(i).probability;
+				queryProbabilities[i] = queryProbability;
+			}	
+		}
+		HashMap<Integer, Double> cosineSimilarities = new HashMap<Integer, Double>();
+		
+		ParallelTopicModel malletModel = model.malletModel;
+		double[][] documentsTopics = malletModel.getDocumentTopics(false, false);
+//		for (int i = 0 ; i < documentsTopics.length; i++) {
+//			double[] documentTopics = documentsTopics[i];
+		for (int i = 0 ; i < relevantProbabilitiesIndex.size(); i++) {
+			double[] documentTopics = documentsTopics[relevantProbabilitiesIndex.get(i)];
+			double cosineSimilarity = computeSimilarity(queryProbabilities, documentTopics);
+			cosineSimilarities.put(i, cosineSimilarity);
+		}
+		List<Entry<Integer, Double>> list = new LinkedList<Entry<Integer, Double>>(
+				cosineSimilarities.entrySet());
+        Collections.sort(list, new Comparator<Entry<Integer, Double>>() {
+            public int compare(Entry<Integer, Double> o1,
+            	Entry<Integer, Double> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
+
+        int displayedHits = xmlConfig.getInt("search.results.displayedHits", list.size());
+        // displayHits als Cosinus-Schwellwert
+        for(int i = 0; i < displayedHits; i++) {
+        	Entry<Integer, Double> entry = list.get(i);
+            result.malletId.add(entry.getKey());
+            result.probabilities.add(entry.getValue());
+            result.PubmedID.add(model.ModelIdpubmedId.get(entry.getKey()));
+        }
 		return result;
 	}
+
 	
 	public Map<String, List<Topic>> inferLabel(Document doc, Model model) {
 		int numIterations = xmlConfig.getInt("infer.parameters.parameter.numIterations");
@@ -240,10 +348,53 @@ public class MalletTopicModeling implements ITopicModeling {
 					+ "-postag-ae-biomedical-english");
 			AnalysisEngine bioLemmatizer = AnalysisEngineFactory.createEngine(
 					"de.julielab.jcore.ae.biolemmatizer.desc.jcore-biolemmatizer-ae");
+			JCas jCas = JCasFactory.createJCas();
 			for (int i = 0; i < docs.size(); i++) {
 				String sentences = docs.get(i).text;
+				System.out.println(sentences);
+				LOGGER.info("Attempt to process document: " + docs.get(i).id);
 				if (sentences != null) {
-					JCas jCas = JCasFactory.createJCas();
+					jCas.setDocumentText(sentences);
+					sentenceDetector.process(jCas);
+					tokenizer.process(jCas);
+					posTagger.process(jCas);
+					bioLemmatizer.process(jCas);
+					foundLemmata = getLemmata(jCas);
+					allLemmata.add(foundLemmata);
+					jCas.reset();
+				}
+			}
+		sentenceDetector.destroy();
+		tokenizer.destroy();
+		posTagger.destroy();
+		bioLemmatizer.destroy();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		LOGGER.info("JCoRe preprocessing finished");
+		return allLemmata;
+	}
+	
+	//Dummy method for testing!!!
+	public List<TokenSequence> testJcorePreprocess(List<Document> docs) {
+		TokenSequence foundLemmata = new TokenSequence();
+		List<TokenSequence> allLemmata = new ArrayList<TokenSequence>();
+		try {
+			AnalysisEngine sentenceDetector = AnalysisEngineFactory.createEngine(
+					"de.julielab.jcore.ae.jsbd.desc.jcore-jsbd-ae-biomedical-english");
+			AnalysisEngine tokenizer = AnalysisEngineFactory.createEngine(
+					"de.julielab.jcore.ae.jtbd.desc.jcore-jtbd-ae-biomedical-english");
+			AnalysisEngine posTagger = AnalysisEngineFactory.createEngine(
+					"de.julielab.jcore.ae.opennlp.postag.desc.jcore-opennlp"
+					+ "-postag-ae-biomedical-english");
+			AnalysisEngine bioLemmatizer = AnalysisEngineFactory.createEngine(
+					"de.julielab.jcore.ae.biolemmatizer.desc.jcore-biolemmatizer-ae");
+			JCas jCas = JCasFactory.createJCas();
+			for (int i = 0; i < docs.size(); i++) {
+				String sentences = docs.get(i).text;
+				System.out.println(sentences);
+				LOGGER.info("Attempt to process document: " + docs.get(i).id);
+				if (sentences != null) {
 					jCas.setDocumentText(sentences);
 					sentenceDetector.process(jCas);
 					tokenizer.process(jCas);
@@ -264,7 +415,8 @@ public class MalletTopicModeling implements ITopicModeling {
 	public InstanceList malletPreprocess(List<TokenSequence> data) {
 		ArrayList<Pipe> pipeList = new ArrayList<Pipe>();
 		pipeList.add( new TokenSequenceRemoveStopwords(false, false));
-		pipeList.add( new TokenSequenceRemoveNonAlpha() );
+		// suspend 'remove alpha'? 
+//		pipeList.add( new TokenSequenceRemoveNonAlpha() );
 		pipeList.add( new TokenSequence2FeatureSequence() );
 		InstanceList instances = new InstanceList (new SerialPipes(pipeList));
 		ArrayIterator dataListIterator = new ArrayIterator(data);
@@ -278,13 +430,25 @@ public class MalletTopicModeling implements ITopicModeling {
 		AnnotationIndex<Annotation> tokenIndex = aJCas.getAnnotationIndex(Token.type);
 		FSIterator<Annotation> tokenIterator = tokenIndex.iterator();
 		while (tokenIterator.hasNext()) {
-			Token token = (Token) tokenIterator.get();
-			Lemma lemma = token.getLemma();
-			String lemmaString = lemma.getValue();
-			lemmata.add(lemmaString);
-			tokenIterator.next();
+				Token token = (Token) tokenIterator.get();
+				Lemma lemma = token.getLemma();
+				String lemmaString = lemma.getValue();
+				if (isNotNum(lemmaString)) { 
+					lemmata.add(lemmaString);
+				}
+				tokenIterator.next();
 		}
 		return lemmata;
+	}
+	
+	// Filters simple numbers that does not have real semantics
+	public boolean isNotNum (String lemmaString) {
+		String num = "\\s?-?\\d+.?\\d*\\s?";
+		if (lemmaString.matches(num)) {
+			return false;
+		} else {
+		return true;
+		}
 	}
 	
 	public void mapPubmedIdToMalletId(List<Document> docs, Model model) {
@@ -296,6 +460,22 @@ public class MalletTopicModeling implements ITopicModeling {
 			model.pubmedIdModelId.put(dociId, i);
 		}
 	}
+	
+	public void mapMalletIdToPubmedId(List<Document> docs, Model model) {
+		model.ModelIdpubmedId = new HashMap<Object, String>();
+		for (int i = 0; i < docs.size(); i++) {
+			Document doci = docs.get(i);
+			String dociId = doci.id;
+			LOGGER.info("Attempting to map Mallet DocID " + i + " to PMID " + dociId);
+			model.ModelIdpubmedId.put(i, dociId);
+		}
+	}
+	
+//	public void evaluate(Model model, InstanceList heldoutDoc) {
+//		MarginalProbEstimator estimator = model.malletModel.getProbEstimator();
+//		double value = estimator.evaluateLeftToRight(
+//				heldoutDoc, numParticles, usingResampling, docProbabilityStream);
+//	}
 
 //	public List<Topic> buildTopicsFromModel(Model model, InstanceList instances) {
 //		ParallelTopicModel malletModel = model.malletModel;
@@ -314,4 +494,77 @@ public class MalletTopicModeling implements ITopicModeling {
 //		}
 //		return topics;
 //	}
+	
+//	public LinkedHashMap<Integer, Double> sortHashMapByValues(
+//	        HashMap<Integer, Double> passedMap) {
+//	    List<Integer> mapKeys = new ArrayList<>(passedMap.keySet());
+//	    List<Double> mapValues = new ArrayList<>(passedMap.values());
+//	    Collections.sort(mapValues);
+//	    Collections.sort(mapKeys);
+//
+//	    LinkedHashMap<Integer, Double> sortedMap =
+//	        new LinkedHashMap<>();
+//
+//	    Iterator<Double> valueIt = mapValues.iterator();
+//	    while (valueIt.hasNext()) {
+//	    	Double val = valueIt.next();
+//	        Iterator<Integer> keyIt = mapKeys.iterator();
+//
+//	        while (keyIt.hasNext()) {
+//	            Integer key = keyIt.next();
+//	            Double comp1 = passedMap.get(key);
+//	            Double comp2 = val;
+//
+//	            if (comp1.equals(comp2)) {
+//	                keyIt.remove();
+//	                sortedMap.put(key, val);
+//	                break;
+//	            }
+//	        }
+//	    }
+//	    return sortedMap;
+//	}
+	
+//	private static Map<Integer, Double> sortByComparator(
+//			HashMap<Integer, Double> unsortMap, final boolean order) {
+//
+//        List<Entry<Integer, Double>> list = new LinkedList<Entry<Integer, Double>>(unsortMap.entrySet());
+//
+//        Collections.sort(list, new Comparator<Entry<Integer, Double>>() {
+//            public int compare(Entry<Integer, Double> o1,
+//                    Entry<Integer, Double> o2) {
+//                if (order) {
+//                    return o1.getValue().compareTo(o2.getValue());
+//                } else {
+//                    return o2.getValue().compareTo(o1.getValue());
+//                }
+//            }
+//        });
+
+        // Maintaining insertion order with the help of LinkedList
+//        Map<Integer, Double> sortedMap = new LinkedHashMap<Integer, Double>();
+//        for (Entry<Integer, Double> entry : list) {
+//            sortedMap.put(entry.getKey(), entry.getValue());
+//        }
+//        return sortedMap;
+//    }
+	
+//	 @Override
+//	  protected double computeSimilarity(Matrix sourceDoc, Matrix targetDoc) {
+//	    double dotProduct = sourceDoc.arrayTimes(targetDoc).norm1();
+//	    double eucledianDist = sourceDoc.normF() * targetDoc.normF();
+//	    return dotProduct / eucledianDist;
+//	  }
+	 
+	 public static double computeSimilarity(double[] vectorA, double[] vectorB) {
+		    double dotProduct = 0.0;
+		    double normA = 0.0;
+		    double normB = 0.0;
+		    for (int i = 0; i < vectorA.length; i++) {
+		        dotProduct += vectorA[i] * vectorB[i];
+		        normA += Math.pow(vectorA[i], 2);
+		        normB += Math.pow(vectorB[i], 2);
+		    }   
+		    return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+		}
 }

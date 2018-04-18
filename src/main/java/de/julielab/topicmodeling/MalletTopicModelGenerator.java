@@ -78,6 +78,8 @@ public class MalletTopicModelGenerator {
 		return model;
 	}
 	
+	public 
+	
 	public void verifyModel(String modelFilename, String configFileName) throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(configFileName);
 		File modelFile = new File(modelFilename);

@@ -4,7 +4,9 @@ import java.util.List;
 
 public class TMSearchResult {
 
-	List<String> PubmedID;
+	public List<String> PubmedID;
+	public List<Integer> malletId;
+	public List<Double> probabilities;
 	
 	public TMSearchResult() {
 		// TODO Auto-generated constructor stub
