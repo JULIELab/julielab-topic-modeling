@@ -1,28 +1,41 @@
 package de.julielab.topicmodeling.services;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import cc.mallet.topics.ParallelTopicModel;
+import cc.mallet.types.Alphabet;
+import cc.mallet.types.Instance;
+import cc.mallet.types.InstanceList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import de.julielab.topicmodeling.businessobjects.Configuration;
 import de.julielab.topicmodeling.businessobjects.Document;
 import de.julielab.topicmodeling.businessobjects.Model;
+import de.julielab.topicmodeling.businessobjects.TMSearchResult;
 import de.julielab.topicmodeling.businessobjects.Topic;
 import de.julielab.topicmodeling.services.MalletTopicModeling;
 
 public class MalletTopicModelingTest {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(MalletTopicModelingTest.class);	
+	
 	//Test Reader
 	@Test
 	public void testReadDocumentsFromFolder() throws ConfigurationException {
@@ -244,6 +257,188 @@ public class MalletTopicModelingTest {
 			}
 			System.out.println("\n");
 		}
+	}
+	
+	@Test
+	public void testJSBD() throws ConfigurationException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		
+		File file = new File("D:/server_logs/pubmed18n0740/pubmed18n0740.xml");
+		List<Document> docs = tm.readDocuments(file);
+		tm.jcorePreprocess(docs);
+	}
+	
+	@Test
+	public void testSearch() throws ConfigurationException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		Configuration config = new Configuration();
+		
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
+		List<Document> docs = tm.readDocuments(file);
+		Model model = tm.train(config, docs);
+		Document query0 = new Document();
+		Document query1 = new Document();
+		Document query2 = new Document();
+		Document queryABC = new Document();
+		query0.id = "0";
+		query0.text = "pregnancy birth children";
+		LOGGER.info("Search query 0");
+		TMSearchResult result0 = tm.search(query0, model);
+		LOGGER.info("Result 0: " + result0.PubmedID);
+		query1.id = "1";
+		query1.text = "health cancer patient";
+		LOGGER.info("Search query 1");
+		TMSearchResult result1 = tm.search(query1, model);
+		LOGGER.info("Result 1: " + result1.PubmedID);
+		query2.id = "2";
+		query2.text = "test";
+		LOGGER.info("Search query 2");
+		TMSearchResult result2 = tm.search(query2, model);
+		LOGGER.info("Result 2: " + result2.PubmedID);
+		queryABC.id = "abc";
+		queryABC.text = "mouse tumor";
+		LOGGER.info("Search query ABC");
+		TMSearchResult resultABC = tm.search(queryABC, model);
+		LOGGER.info("Result ABC: " + resultABC.PubmedID);
+	}
+	
+	@Test
+	public void testSearchNoOptimization() throws ConfigurationException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template_no_optimization.xml");
+		Configuration config = new Configuration();
+		
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
+		List<Document> docs = tm.readDocuments(file);
+		Model model = tm.train(config, docs);
+		Document query0 = new Document();
+		Document query1 = new Document();
+		Document query2 = new Document();
+		Document queryABC = new Document();
+		query0.id = "0";
+		query0.text = "pregnancy birth children";
+		LOGGER.info("Search query 0 (NoOptimization)");
+		TMSearchResult result0 = tm.search(query0, model);
+		LOGGER.info("Result 0 (NoOptimization): " + result0.PubmedID);
+		query1.id = "1";
+		query1.text = "health cancer patient";
+		LOGGER.info("Search query 1 (NoOptimization)");
+		TMSearchResult result1 = tm.search(query1, model);
+		LOGGER.info("Result 1 (NoOptimization): " + result1.PubmedID);
+		query2.id = "2";
+		query2.text = "test";
+		LOGGER.info("Search query 2 (NoOptimization)");
+		TMSearchResult result2 = tm.search(query2, model);
+		LOGGER.info("Result 2 (NoOptimization): " + result2.PubmedID);
+		queryABC.id = "abc";
+		queryABC.text = "mouse tumor";
+		LOGGER.info("Search query ABC (NoOptimization)");
+		TMSearchResult resultABC = tm.search(queryABC, model);
+		LOGGER.info("Result ABC (NoOptimization): " + resultABC.PubmedID);
+	}
+	
+	@Test
+	public void testBigSearch() throws ConfigurationException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		Configuration config = new Configuration();
+		
+		File file = new File("D:/server_logs/pubmed18n0740.xml.gz");
+		List<Document> docs = tm.readDocuments(file);
+		Model model = tm.train(config, docs);
+		Document query0 = new Document();
+		Document query1 = new Document();
+		Document query2 = new Document();
+		Document queryABC = new Document();
+		query0.id = "0";
+		query0.text = "pregnancy birth children";
+		LOGGER.info("Big Search query 0");
+		TMSearchResult result0 = tm.search(query0, model);
+		LOGGER.info("Big Result 0: " + result0.PubmedID);
+		query1.id = "1";
+		query1.text = "health cancer patient";
+		LOGGER.info("Big Search query 1");
+		TMSearchResult result1 = tm.search(query1, model);
+		LOGGER.info("Big Result 1: " + result1.PubmedID);
+		query2.id = "2";
+		query2.text = "test";
+		LOGGER.info("Big Search query 2");
+		TMSearchResult result2 = tm.search(query2, model);
+		LOGGER.info("Big Result 2: " + result2.PubmedID);
+		queryABC.id = "abc";
+		queryABC.text = "mouse tumor";
+		LOGGER.info("Big Search query ABC");
+		TMSearchResult resultABC = tm.search(queryABC, model);
+		LOGGER.info("Big Result ABC: " + resultABC.PubmedID);
+	}
+	
+	//dummy test
+	@Test
+	public void testPreprocessing() throws ConfigurationException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
+		List<Document> docs = tm.readDocuments(file);
+		InstanceList instances = tm.preprocess(docs);
+		
+//		Iterator<Instance> institer = instances.iterator();
+//		while (institer.hasNext()) {
+//			Instance inst = institer.next();
+//			Alphabet data = inst.getDataAlphabet();
+//			Iterator<Object> dataiter =  data.iterator();
+//			while (dataiter.hasNext()) {
+//				System.out.println(institer.next());
+//			}
+//			assertTrue(data.contains("3-hydroxy-3-methylglutaryl-coenzyme"));
+//		}
+		Instance instWithAlphaNum = instances.get(1);
+		Alphabet instWords = instWithAlphaNum.getAlphabet();
+		System.out.println(instWords);
+		assertTrue(instWords.contains("3-hydroxy-3-methylglutaryl-coenzyme"));
+		assertFalse(instWords.contains("16"));
+		Instance instWithAlphaNum_5 = instances.get(5);
+		Alphabet instWords_5 = instWithAlphaNum_5.getAlphabet();
+		assertFalse(instWords_5.contains("18-29"));
+		Instance instWithAlphaNum_10 = instances.get(10);
+		Alphabet instWords_10 = instWithAlphaNum_10.getAlphabet();
+		assertFalse(instWords_10.contains("-0.6"));
+	}	
+	
+	@Test
+	public void testBigSearchNoOptimization() throws ConfigurationException, IOException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template_no_optimization.xml");
+		Configuration config = new Configuration();
+		
+		File file = new File("D:/server_logs/pubmed18n0740.xml.gz");
+		List<Document> docs = tm.readDocuments(file);
+		Model model = tm.train(config, docs);
+		Document query0 = new Document();
+		Document query1 = new Document();
+		Document query2 = new Document();
+		Document queryABC = new Document();
+		query0.id = "0";
+		query0.text = "pregnancy birth children";
+		LOGGER.info("Big Search query 0 (NoOptimization)");
+		TMSearchResult result0 = tm.search(query0, model);
+		LOGGER.info("Big Result 0 (NoOptimization): " + result0.PubmedID);
+		query1.id = "1";
+		query1.text = "health cancer patient";
+		LOGGER.info("Big Search query 1 (NoOptimization)");
+		TMSearchResult result1 = tm.search(query1, model);
+		LOGGER.info("Big Result 1 (NoOptimization): " + result1.PubmedID);
+		query2.id = "2";
+		query2.text = "test";
+		LOGGER.info("Big Search query 2 (NoOptimization)");
+		TMSearchResult result2 = tm.search(query2, model);
+		LOGGER.info("Big Result 2 (NoOptimization): " + result2.PubmedID);
+		queryABC.id = "abc";
+		queryABC.text = "mouse tumor";
+		LOGGER.info("Big Search query ABC (NoOptimization)");
+		TMSearchResult resultABC = tm.search(queryABC, model);
+		LOGGER.info("Big Result ABC (NoOptimization): " + resultABC.PubmedID);
 	}
 	
 //	@Test

@@ -18,14 +18,21 @@
 				<numIterations>1000</numIterations>
 			</parameter>
 			<parameter>
-				<optimizationInterval>50</optimizationInterval>
+				<optimizationInterval>0</optimizationInterval>
 			</parameter>
 		</parameters>
 	</train>
+	<search>
+		<parameters>
+			<parameter>
+				<probabilityThreshold>0.001</probabilityThreshold>
+			</parameter>
+		</parameters>
+	</search>
 	<infer>
 		<parameters>
 			<parameter>
-				<numIterations>100</numIterations>
+				<numIterations>500</numIterations>
 			</parameter>
 			<parameter>
 				<savingInterval>10</savingInterval>
