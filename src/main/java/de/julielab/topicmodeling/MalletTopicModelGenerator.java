@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cc.mallet.topics.ParallelTopicModel;
+import cc.mallet.types.InstanceList;
+import cc.mallet.types.TokenSequence;
 import de.julielab.topicmodeling.businessobjects.Configuration;
 import de.julielab.topicmodeling.businessobjects.Document;
 import de.julielab.topicmodeling.businessobjects.Model;
@@ -38,7 +40,12 @@ public class MalletTopicModelGenerator {
 						+ " config " + args[0] 
 						+ " with data file location " + args[1] 
 						+ ", and model will be written in file " + args[2] );
-			Model model = generator.generateTopicModel(args[0], args[1], args[2]);
+			Model model = new Model();
+			if (args[2].equals("none")) {
+				model = generator.generateTopicModelFromDatabase(args[0], args[2]);
+			} else { 
+				model = generator.generateTopicModel(args[0], args[1], args[2]);
+			}
 			if (args.length == 4) {
 				if (args[3].equals("verify")) {
 					generator.verifyModel(args[2], args[0]);
@@ -57,7 +64,8 @@ public class MalletTopicModelGenerator {
 		} catch (Exception e) {
 			System.out.println("Usage: \n"
 								+ "Obligatory arguments: [0]<configuration file path>, "
-								+ "[1]<file or folder path to PUBMED documents to be modelled>, "
+								+ "[1]<file or folder path to PUBMED documents to be modelled> "
+								+ "type 'none' for DB connection from dbcConnection file, "
 								+ "[2]<newly generated model file path> \n"
 								+ "Optional arguments: "
 								+ "[3]verify (verifies the model after generating), "
@@ -78,7 +86,17 @@ public class MalletTopicModelGenerator {
 		return model;
 	}
 	
-	public 
+	public Model generateTopicModelFromDatabase(String configFileName, String modelFilename) 
+			throws ConfigurationException {
+		Configuration uselessConfig = new Configuration();
+		MalletTopicModeling tm = new MalletTopicModeling(configFileName);
+		List<TokenSequence> allDocLemmata = tm.readXmiDb(tm);
+		InstanceList instances = tm.malletPreprocess(allDocLemmata);
+		Model model = tm.train(uselessConfig, instances);
+		File modelFile = new File(modelFilename);
+		tm.saveModel(model, modelFile);
+		return model;
+	}
 	
 	public void verifyModel(String modelFilename, String configFileName) throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(configFileName);

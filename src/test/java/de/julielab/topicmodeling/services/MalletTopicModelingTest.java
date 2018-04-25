@@ -1,12 +1,9 @@
 package de.julielab.topicmodeling.services;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import cc.mallet.topics.ParallelTopicModel;
 import cc.mallet.types.Alphabet;
 import cc.mallet.types.Instance;
-import cc.mallet.types.InstanceList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -381,7 +377,8 @@ public class MalletTopicModelingTest {
 				"src/test/resources/config_template.xml");
 		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		InstanceList instances = tm.preprocess(docs);
+//		InstanceList instances = tm.preprocess(docs);
+		tm.preprocess(docs);
 		
 //		Iterator<Instance> institer = instances.iterator();
 //		while (institer.hasNext()) {
@@ -393,15 +390,18 @@ public class MalletTopicModelingTest {
 //			}
 //			assertTrue(data.contains("3-hydroxy-3-methylglutaryl-coenzyme"));
 //		}
-		Instance instWithAlphaNum = instances.get(1);
+//		Instance instWithAlphaNum = instances.get(1);
+		Instance instWithAlphaNum = (Instance) docs.get(1).preprocessedData;
 		Alphabet instWords = instWithAlphaNum.getAlphabet();
 		System.out.println(instWords);
 		assertTrue(instWords.contains("3-hydroxy-3-methylglutaryl-coenzyme"));
 		assertFalse(instWords.contains("16"));
-		Instance instWithAlphaNum_5 = instances.get(5);
+//		Instance instWithAlphaNum_5 = instances.get(5);
+		Instance instWithAlphaNum_5 = (Instance) docs.get(5).preprocessedData;
 		Alphabet instWords_5 = instWithAlphaNum_5.getAlphabet();
 		assertFalse(instWords_5.contains("18-29"));
-		Instance instWithAlphaNum_10 = instances.get(10);
+//		Instance instWithAlphaNum_10 = instances.get(10);
+		Instance instWithAlphaNum_10 = (Instance) docs.get(5).preprocessedData;
 		Alphabet instWords_10 = instWithAlphaNum_10.getAlphabet();
 		assertFalse(instWords_10.contains("-0.6"));
 	}	
