@@ -277,11 +277,10 @@ public class MalletTopicModeling implements ITopicModeling {
 		try {
 			CollectionReader xmiDbReader = CollectionReaderFactory.createReaderFromPath(
 //					"src/main/resources/de/julielab/jcore/reader/xmi/XmiDBReader.xml", 
-					"XmiDBReader.xml",
+					"configs/XmiDBReader.xml",
 					SubsetReaderConstants.PARAM_ADDITIONAL_TABLES, 
 					token, TableReaderConstants.PARAM_TABLE, subset);
-			JCas jCas = JCasFactory.createJCas("de.julielab.jcore.types.jcore-morpho-syntax-types",
-					"de.julielab.jcore.types.jcore-document-meta-types");
+			JCas jCas = JCasFactory.createJCas("de.julielab.jcore.types.jcore-all-types");
 			CAS aCAS = jCas.getCas();
 			while (xmiDbReader.hasNext()) {
 				xmiDbReader.getNext(aCAS);
