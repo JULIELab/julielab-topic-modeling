@@ -37,9 +37,9 @@ import cc.mallet.pipe.SerialPipes;
 import cc.mallet.pipe.TokenSequence2FeatureSequence;
 import cc.mallet.pipe.TokenSequenceRemoveStopwords;
 import cc.mallet.pipe.iterator.ArrayIterator;
-import cc.mallet.topics.MarginalProbEstimator;
 import cc.mallet.topics.ParallelTopicModel;
 import cc.mallet.topics.TopicInferencer;
+import cc.mallet.types.Alphabet;
 import cc.mallet.types.IDSorter;
 import cc.mallet.types.Instance;
 import cc.mallet.types.InstanceList;
@@ -156,6 +156,7 @@ public class MalletTopicModeling implements ITopicModeling {
 		LOGGER.info("Model is saved in " + file.getName());
 	}
 	
+	// Reader
 	public List<Document> readDocuments(File file) {
 		if (file.isDirectory()) {
 			FilenameFilter xmlFilter = new FilenameFilter() {
@@ -254,13 +255,69 @@ public class MalletTopicModeling implements ITopicModeling {
 	
 	//Searcher
 	public TMSearchResult search(Document query, Model model) {
+		double probabilityThreshold = xmlConfig.getDouble("search.parameters.parameter"
+				+ ".probabilityThreshold"); 
+		
 		TMSearchResult result = new TMSearchResult();
-		result = searchModel(query, model);
-		result = searchIndex(query, model, indexDocument);
+		result.malletId = new ArrayList<Integer>();
+		result.probabilities = new ArrayList<Double>();
+		result.PubmedID = new ArrayList<String>();
+		
+		List<Document> queryInList = new ArrayList<>();
+		queryInList.add(query);
+		query.preprocessedData = preprocess(queryInList);
+		Map<String, List<Topic>> queryInstance = inferLabel(query, model);
+		List<Topic> queryTopics = queryInstance.get(query.id);
+		double[] queryProbabilities = new double[queryTopics.size()];
+		List<Integer> relevantProbabilitiesIndex = new ArrayList<Integer>();
+		for (int i = 0; i < queryTopics.size(); i++) {
+			if (queryTopics.get(i).probability >= probabilityThreshold) {
+				relevantProbabilitiesIndex.add(i);
+				double queryProbability = queryTopics.get(i).probability;
+				queryProbabilities[i] = queryProbability;
+			}	
+		}
+		HashMap<Integer, Double> cosineSimilarities = new HashMap<Integer, Double>();
+		
+		ParallelTopicModel malletModel = model.malletModel;
+		double[][] documentsTopics = malletModel.getDocumentTopics(false, false);
+		for (int i = 0 ; i < relevantProbabilitiesIndex.size(); i++) {
+			double[] documentTopics = documentsTopics[relevantProbabilitiesIndex.get(i)];
+			double cosineSimilarity = computeSimilarity(queryProbabilities, documentTopics);
+			cosineSimilarities.put(i, cosineSimilarity);
+		}
+		HashMap<Document, List<Topic>> index = model.index;
+		for (int i = 0; i < index.size(); i++) {
+			List<Topic> documentTopics = index.get(i);
+			double[] documentProbabilities = new double[documentTopics.size()];
+			for (int k = 0 ; k < relevantProbabilitiesIndex.size(); k++) {
+				Topic documentTopic = documentTopics.get(k);
+				documentProbabilities[k] = documentTopic.probability;
+				double cosineSimilarity = computeSimilarity(queryProbabilities, documentProbabilities);
+				cosineSimilarities.put(k, cosineSimilarity);
+			}
+		}
+		List<Entry<Integer, Double>> list = new LinkedList<Entry<Integer, Double>>(
+				cosineSimilarities.entrySet());
+        Collections.sort(list, new Comparator<Entry<Integer, Double>>() {
+            public int compare(Entry<Integer, Double> o1,
+            	Entry<Integer, Double> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
+
+        int displayedHits = xmlConfig.getInt("search.results.displayedHits", list.size());
+        // displayHits as cosine threshold
+        for(int i = 0; i < displayedHits; i++) {
+        	Entry<Integer, Double> entry = list.get(i);
+            result.malletId.add(entry.getKey());
+            result.probabilities.add(entry.getValue());
+            result.PubmedID.add(model.ModelIdpubmedId.get(entry.getKey()));
+        }
 		return result;
 	}
 	
-	public TMSearchResult searchModel(Document query, Model model) {
+	public TMSearchResult searchModelOnly(Document query, Model model) {
 		double probabilityThreshold = xmlConfig.getDouble("search.parameters.parameter"
 				+ ".probabilityThreshold"); 
 		
@@ -309,7 +366,7 @@ public class MalletTopicModeling implements ITopicModeling {
 		return result;
 	}
 	
-	public TMSearchResult searchIndex(Document query, Model model, Document indexDoc) {
+	public TMSearchResult searchIndexOnly(Document query, Model model) {
 		double probabilityThreshold = xmlConfig.getDouble("search.parameters.parameter"
 				+ ".probabilityThreshold"); 
 		
@@ -331,15 +388,29 @@ public class MalletTopicModeling implements ITopicModeling {
 		}
 		HashMap<Integer, Double> cosineSimilarities = new HashMap<Integer, Double>();
 		
+		
 		HashMap<Document, List<Topic>> index = model.index;
-		List<Topic> documentTopics = index.get(indexDoc.id);
-		double[] documentProbabilities = new double[documentTopics.size()];
-		for (int i = 0 ; i < relevantProbabilitiesIndex.size(); i++) {
-			Topic documentTopic = documentTopics.get(i);
-			documentProbabilities[i] = documentTopic.probability;
-			double cosineSimilarity = computeSimilarity(queryProbabilities, documentProbabilities);
-			cosineSimilarities.put(i, cosineSimilarity);
+		for (int i = 0; i < index.size(); i++) {
+			List<Topic> documentTopics = index.get(i);
+			double[] documentProbabilities = new double[documentTopics.size()];
+			for (int k = 0 ; k < relevantProbabilitiesIndex.size(); k++) {
+				Topic documentTopic = documentTopics.get(k);
+				documentProbabilities[k] = documentTopic.probability;
+				double cosineSimilarity = computeSimilarity(queryProbabilities, documentProbabilities);
+				cosineSimilarities.put(k, cosineSimilarity);
+			}
 		}
+		
+//		HashMap<Document, List<Topic>> index = model.index;
+//		List<Topic> documentTopics = index.get(indexDoc.id);
+//		double[] documentProbabilities = new double[documentTopics.size()];
+//		for (int i = 0 ; i < relevantProbabilitiesIndex.size(); i++) {
+//			Topic documentTopic = documentTopics.get(i);
+//			documentProbabilities[i] = documentTopic.probability;
+//			double cosineSimilarity = computeSimilarity(queryProbabilities, documentProbabilities);
+//			cosineSimilarities.put(i, cosineSimilarity);
+//		}
+		
 		List<Entry<Integer, Double>> list = new LinkedList<Entry<Integer, Double>>(
 				cosineSimilarities.entrySet());
         Collections.sort(list, new Comparator<Entry<Integer, Double>>() {
@@ -359,9 +430,11 @@ public class MalletTopicModeling implements ITopicModeling {
         }
 		return result;
 	}
-	
+
+	// indexing within this TM-module; TopicLabelConsumer just iterates CASes
 	public void populateModelIndex(Model model) {
 		HashMap<Document, List<Topic>> index = model.index;
+		int topicWordsDisplayed = xmlConfig.getInt("infer.parameters.parameter.topicWordsDisplayed");
 		try {
 			CollectionReader topicLabelConsumer = CollectionReaderFactory.
 					createReader("de.julielab.jcore.consumer.topiclabel.TopicLabelConsumer");
@@ -376,10 +449,16 @@ public class MalletTopicModeling implements ITopicModeling {
 				String modelId = topicsFeatures.getModelID();
 				String modelVersion = topicsFeatures.getModelVersion();
 				List<Topic> topics = new ArrayList<>();
-				for (int i = 0; i < topicsFeatures.getWeights().size; i++) {
+				for (int i = 0; i < weights.size(); i++) {
 					Topic topic = new Topic();
 					topic.probability = weights.get(i);
 					topic.id = ids.get(i);
+					for (int k = 0; k < topicWordsDisplayed; k++) {
+						String topicWord = topicWords.get(k);
+						topic.topicWords[i] = topicWord; 
+					}
+					topic.modelId = modelId;
+					topic.modelVersion = modelVersion;
 					topics.add(topic);
 				}	
 				Document doc = new Document();
@@ -387,25 +466,38 @@ public class MalletTopicModeling implements ITopicModeling {
 				doc.id = header.getDocId();
 				index.put(doc, topics);
 			}	
-//			while (topicLabelConsumer.hasNext()) {
-//				topicLabelConsumer.getNext(cas);
-//				Document doc = new Document();
-//				doc.id = topicLabelConsumer.getPubmedId();
-//				List<Topic> topics = new ArrayList<>();
-//				for (int i = 0; i < topicLabelConsumer.getWeights().size; i++) {
-//					Topic topic = new Topic();
-//					topic.probability = topicLabelConsumer.getWeights().get(i);
-//					topic.id = topicLabelConsumer.getIds()get(i);
-//				}
-//				index.put(doc, topics);
-//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public Map<String, List<Topic>> inferLabel(Document doc, Model model) {
+		int numIterations = xmlConfig.getInt("infer.parameters.parameter.numIterations");
+		int thinning = xmlConfig.getInt("infer.parameters.parameter.savingInterval");
+		int burnIn = xmlConfig.getInt("infer.parameters.parameter.firstSavingInterval");
+		int topicWordsDisplayed = xmlConfig.getInt("infer.parameters.parameter.topicWordsDisplayed");
 		Map<String, List<Topic>> result = new HashMap<String, List<Topic>>();
+		ParallelTopicModel malletModel = model.malletModel;
+		TopicInferencer inferencer = malletModel.getInferencer();
+		
+		TokenSequence jcorePreprocessed = (TokenSequence) doc.preprocessedData;
+		List<TokenSequence> jcorePreprocessedList = new ArrayList<>();
+		jcorePreprocessedList.add(jcorePreprocessed);
+		InstanceList instances = malletPreprocess(jcorePreprocessedList);
+		Instance instance = instances.get(0);
+		
+		double[] distribution = inferencer.getSampledDistribution(
+				instance, numIterations, thinning, burnIn);
+		List<Topic> topics = new ArrayList<Topic>();
+		for (int i = 0; i < distribution.length; i++) {
+			Topic topic = new Topic();
+			topic.probability = distribution[i];
+			Object[][] topicWords = malletModel.getTopWords(topicWordsDisplayed);
+			topic.id = i;
+			topic.topicWords = topicWords[i];
+			topics.add(topic);
+		}
+		result.put(doc.id, topics);
 		return result;
 	}
 	
@@ -588,7 +680,7 @@ public class MalletTopicModeling implements ITopicModeling {
 	}
 	
 	public boolean isNotPunctuation (String lemmaString) {
-		String punct = "[.,!?\\-():;%']";
+		String punct = "[.,:;!?\\/-()<>[]%']";
 		if (lemmaString.matches(punct)) {
 			return false;
 		} else {
@@ -619,11 +711,11 @@ public class MalletTopicModeling implements ITopicModeling {
 		LOGGER.info("Mallet document IDs are mapped to PubMed citation IDs (PMIDs)");
 	}
 	
-	public void evaluate(Model model, InstanceList heldoutDoc) {
-		MarginalProbEstimator estimator = model.malletModel.getProbEstimator();
-		double value = estimator.evaluateLeftToRight(
-				heldoutDoc, numParticles, usingResampling, docProbabilityStream);
-	}
+//	public void evaluate(Model model, InstanceList heldoutDoc) {
+//		MarginalProbEstimator estimator = model.malletModel.getProbEstimator();
+//		double value = estimator.evaluateLeftToRight(
+//				heldoutDoc, numParticles, usingResampling, docProbabilityStream);
+//	}
 
 //	public List<Topic> buildTopicsFromModel(Model model, InstanceList instances) {
 //		ParallelTopicModel malletModel = model.malletModel;
@@ -654,4 +746,11 @@ public class MalletTopicModeling implements ITopicModeling {
 		    }   
 		    return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
 		}
+	 
+	 public Object[] getVocabulary(Model model) {
+		 ParallelTopicModel malletModel = model.malletModel;
+		 Alphabet alphabet = malletModel.getAlphabet();
+		 Object[] alphabetArray = alphabet.toArray();
+		 return alphabetArray;
+	 }
 }

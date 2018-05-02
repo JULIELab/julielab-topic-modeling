@@ -22,7 +22,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
-import de.julielab.topicmodeling.businessobjects.Configuration;
 import de.julielab.topicmodeling.businessobjects.Document;
 import de.julielab.topicmodeling.businessobjects.Model;
 import de.julielab.topicmodeling.businessobjects.TMSearchResult;
@@ -125,11 +124,10 @@ public class MalletTopicModelingTest {
 	@Test
 	public void testTrain() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling("src/test/resources/config_template.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		ParallelTopicModel malletParallelTopicModel = model.malletModel;
 		// actually there are 177 PMIDs found and only 96 abstract texts in the file!
 		// TO DO: find out why there are 112 documents (more than abstract texts!) attached by topics 
@@ -147,11 +145,10 @@ public class MalletTopicModelingTest {
 	@Test
 	public void testSaveModelReadModel() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling("src/test/resources/config_template.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		
 		File modelFile = new File("src/test/resources/test_model");
 		tm.saveModel(model, modelFile);
@@ -165,11 +162,10 @@ public class MalletTopicModelingTest {
 	public void testNoOptimization() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(
 				"src/test/resources/config_template_no_optimization.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		int malletOptimizationSetting = model.malletModel.optimizeInterval;
 		double malletAlphaSumSetting = model.malletModel.alphaSum;
 		double malletBetaSetting = model.malletModel.beta;
@@ -182,11 +178,10 @@ public class MalletTopicModelingTest {
 	public void testMapPubmedIdToMalletId() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(
 				"src/test/resources/config_template_no_optimization.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		tm.mapPubmedIdToMalletId(docs, model);
 		HashMap<String, Integer> map = model.pubmedIdModelId;
 		Integer int1 = 1;
@@ -210,11 +205,10 @@ public class MalletTopicModelingTest {
 	public void testMapPubmedIdToMalletIdFromFolder() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(
 				"src/test/resources/config_template_no_optimization.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("src/test/resources/test_folder_data/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		tm.mapPubmedIdToMalletId(docs, model);
 		HashMap<String, Integer> map = model.pubmedIdModelId;
 		Integer int1 = 1;
@@ -295,11 +289,10 @@ public class MalletTopicModelingTest {
 	public void testSearch() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(
 				"src/test/resources/config_template.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		Document query0 = new Document();
 		Document query1 = new Document();
 		Document query2 = new Document();
@@ -330,11 +323,10 @@ public class MalletTopicModelingTest {
 	public void testSearchNoOptimization() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(
 				"src/test/resources/config_template_no_optimization.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("src/test/resources/pubmedsample18n0001.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		Document query0 = new Document();
 		Document query1 = new Document();
 		Document query2 = new Document();
@@ -365,11 +357,10 @@ public class MalletTopicModelingTest {
 	public void testBigSearch() throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling(
 				"src/test/resources/config_template.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("D:/server_logs/pubmed18n0740.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		Document query0 = new Document();
 		Document query1 = new Document();
 		Document query2 = new Document();
@@ -436,11 +427,10 @@ public class MalletTopicModelingTest {
 	public void testBigSearchNoOptimization() throws ConfigurationException, IOException {
 		MalletTopicModeling tm = new MalletTopicModeling(
 				"src/test/resources/config_template_no_optimization.xml");
-		Configuration config = new Configuration();
 		
 		File file = new File("D:/server_logs/pubmed18n0740.xml.gz");
 		List<Document> docs = tm.readDocuments(file);
-		Model model = tm.train(config, docs);
+		Model model = tm.train(docs);
 		Document query0 = new Document();
 		Document query1 = new Document();
 		Document query2 = new Document();
@@ -476,6 +466,18 @@ public class MalletTopicModelingTest {
 		List<Document> lemmataFromDb = tm.readXmiDb(tm, subset);
 		assertNotEquals(null, lemmataFromDb);
 		assertEquals(Token.class, lemmataFromDb.get(0).preprocessedData);
+	}
+	
+	@Test
+	public void testGetVocabulary() throws ConfigurationException {
+		MalletTopicModeling tm = new MalletTopicModeling(
+				"src/test/resources/config_template.xml");
+		File modelFile = new File("src/test/resources/test_model");
+		Model model = tm.readModel(modelFile);
+		Object[] voc = tm.getVocabulary(model);
+		for (int i = 0; i < voc.length; i++) {
+			System.out.println(voc[i]);	
+		}
 	}
 	
 //	@Test

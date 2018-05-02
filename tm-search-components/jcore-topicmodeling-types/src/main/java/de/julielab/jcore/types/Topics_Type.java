@@ -1,6 +1,6 @@
 package de.julielab.jcore.types;
 
-/* First created by JCasGen Sun Apr 29 15:18:50 CEST 2018 */
+/* First created by JCasGen Sun Apr 29 17:58:34 CEST 2018 */
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.DocumentAnnotation_Type;
 
 /** Topics label documents with vectors weights for their semantically most prominent words
- * Updated by JCasGen Sun Apr 29 15:57:03 CEST 2018
+ * Updated by JCasGen Mon Apr 30 08:45:56 CEST 2018
  * @generated */
 public class Topics_Type extends DocumentAnnotation_Type {
   /** @generated */
@@ -198,6 +198,30 @@ public class Topics_Type extends DocumentAnnotation_Type {
     ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_TopicWords), i, v);
   }
  
+ 
+  /** @generated */
+  final Feature casFeat_ModelVersion;
+  /** @generated */
+  final int     casFeatCode_ModelVersion;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getModelVersion(int addr) {
+        if (featOkTst && casFeat_ModelVersion == null)
+      jcas.throwFeatMissing("ModelVersion", "Topics");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_ModelVersion);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setModelVersion(int addr, String v) {
+        if (featOkTst && casFeat_ModelVersion == null)
+      jcas.throwFeatMissing("ModelVersion", "Topics");
+    ll_cas.ll_setStringValue(addr, casFeatCode_ModelVersion, v);}
+    
+  
 
 
 
@@ -225,6 +249,10 @@ public class Topics_Type extends DocumentAnnotation_Type {
  
     casFeat_TopicWords = jcas.getRequiredFeatureDE(casType, "TopicWords", "uima.cas.StringArray", featOkTst);
     casFeatCode_TopicWords  = (null == casFeat_TopicWords) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_TopicWords).getCode();
+
+ 
+    casFeat_ModelVersion = jcas.getRequiredFeatureDE(casType, "ModelVersion", "uima.cas.String", featOkTst);
+    casFeatCode_ModelVersion  = (null == casFeat_ModelVersion) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_ModelVersion).getCode();
 
   }
 }

@@ -15,15 +15,12 @@ import org.slf4j.LoggerFactory;
 import cc.mallet.topics.ParallelTopicModel;
 import cc.mallet.types.InstanceList;
 import cc.mallet.types.TokenSequence;
-import de.julielab.topicmodeling.businessobjects.Configuration;
 import de.julielab.topicmodeling.businessobjects.Document;
 import de.julielab.topicmodeling.businessobjects.Model;
 import de.julielab.topicmodeling.services.MalletTopicModeling;
 
 public class MalletTopicModelGenerator {
 
-	Configuration uselessConfig = new Configuration();
-	
 	private static final Logger LOGGER = LoggerFactory.getLogger(MalletTopicModelGenerator.class);
 	
 	public MalletTopicModelGenerator() {
@@ -77,11 +74,10 @@ public class MalletTopicModelGenerator {
 
 	public Model generateTopicModel(String configFileName, String docFilename, String modelFilename) 
 			throws ConfigurationException {
-		Configuration uselessConfig = new Configuration();
 		MalletTopicModeling tm = new MalletTopicModeling(configFileName);
 		File docFile = new File(docFilename);
 		List<Document> docs = tm.readDocuments(docFile);
-		Model model = tm.train(uselessConfig, docs);
+		Model model = tm.train(docs);
 		File modelFile = new File(modelFilename);
 		tm.saveModel(model, modelFile);
 		return model;
@@ -89,7 +85,6 @@ public class MalletTopicModelGenerator {
 	
 	public Model generateTopicModelFromDatabase(String configFileName, String modelFilename) 
 			throws ConfigurationException {
-		Configuration uselessConfig = new Configuration();
 		MalletTopicModeling tm = new MalletTopicModeling(configFileName);
 		String subset = tm.xmlConfig.getString("train.corpus.subset.table");
 		LOGGER.info("Start reading from DB table " + subset);
@@ -106,7 +101,7 @@ public class MalletTopicModelGenerator {
 		LOGGER.info("Start preprocessing with Mallet pipes");
 		InstanceList instances = tm.malletPreprocess(allDocLemmata);
 		LOGGER.info("Start training with Mallet");
-		Model model = tm.train(uselessConfig, instances);
+		Model model = tm.train(instances);
 		LOGGER.info("Start mapping Mallet IDs to PMIDs");
 		tm.mapMalletIdToPubmedId(docs, model);
 		File modelFile = new File(modelFilename);
