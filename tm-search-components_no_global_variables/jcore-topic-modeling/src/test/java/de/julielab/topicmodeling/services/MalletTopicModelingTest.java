@@ -119,7 +119,7 @@ public class MalletTopicModelingTest {
 		assertEquals(1.0, xmlConfig.getDouble("train.parameters.parameter.alphaSum"), 0.0);
 		assertEquals(0.1, xmlConfig.getDouble("train.parameters.parameter.beta"), 0.0);
 		assertEquals(1, xmlConfig.getInt("train.parameters.parameter.numThreads"));
-		assertEquals(1000, xmlConfig.getInt("train.parameters.parameter.numIterations"));
+		assertEquals(200, xmlConfig.getInt("train.parameters.parameter.numIterations"));
 		assertEquals(50, xmlConfig.getInt("train.parameters.parameter.optimizationInterval"));
 	}
 	
@@ -188,7 +188,7 @@ public class MalletTopicModelingTest {
 		int malletOptimizationSetting = model.malletModel.optimizeInterval;
 		double malletAlphaSumSetting = model.malletModel.alphaSum;
 		double malletBetaSetting = model.malletModel.beta;
-		assertTrue(malletOptimizationSetting == 0);
+		assertTrue(malletOptimizationSetting == 50);
 		assertTrue(malletAlphaSumSetting == 1.0);
 		assertTrue(malletBetaSetting == 0.1);
 	}
