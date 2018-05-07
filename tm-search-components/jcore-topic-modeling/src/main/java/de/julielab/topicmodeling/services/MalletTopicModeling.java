@@ -823,7 +823,7 @@ public class MalletTopicModeling implements ITopicModeling {
 			 topicModel.index = mergedIndex;
 			 
 //			 modelWithAllIndexes.index = mergedIndex;
-//			 saveModel(modelWithAllIndexes, mergedIndexesFilesName);
+			 saveModel(topicModel, mergedIndexesFilesName);
 		 }
 	 }
 }
