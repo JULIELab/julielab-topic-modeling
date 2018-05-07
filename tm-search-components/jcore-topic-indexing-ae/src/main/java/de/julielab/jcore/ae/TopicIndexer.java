@@ -35,27 +35,12 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 
 	private final static Logger log = LoggerFactory.getLogger(TopicIndexer.class);
 
-	/**
-	 * XML configuration file for model training, labeling, and search
-	 */
 	public static final String PARAM_TOPIC_MODEL_CONFIG = "TopicModelConfig";
 
-	/**
-	 * Serialized file containing a de.julielab.topicmodeling.Model object
-	 * that includes fields for name, version, ID map for Pubmed-IDs and Mallet-IDs,
-	 * index, and the Mallet model object
-	 */
 	public static final String PARAM_TOPIC_MODEL_FILE_NAME = "TopicModelFile";
 
-	/**
-	 * Number of the top topic words that can be used e.g. for displaying as 
-	 * label for documents 
-	 */
 	public static final String PARAM_NUM_DISPLAYED_TOPIC_WORDS = "DisplayedTopicWords";
 
-	/**
-	 * Whether or not to store the processed labels in the index of the model object 
-	 */
 	public static final String PARAM_STORE_IN_MODEL_INDEX = "StoreInModelIndex";
 
 	@ConfigurationParameter(name = PARAM_TOPIC_MODEL_CONFIG, mandatory = true)
@@ -72,8 +57,8 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 	XMLConfiguration xmlConfig;
 
 	/**
-	 * Loads model configuration and serialized model and checks whether to populate the 
-	 * model's index
+	 * This method is called a single time by the framework at component
+	 * creation. Here, descriptor parameters are read and initial setup is done.
 	 */
 	@Override
 	public void initialize(final UimaContext aContext) throws ResourceInitializationException {
@@ -92,8 +77,8 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 	}
 
 	/**
-	 * Infers labels and stores them in the CAS; if toModelIndex is set true, information is to stored
-	 * into the model's index 
+	 * This method is called for each document going through the component. This
+	 * is where the actual work happens.
 	 */
 	@Override
 	public void process(final JCas aJCas) throws AnalysisEngineProcessException {
@@ -132,28 +117,27 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 						Topic topic = new Topic();
 						topic.topicWords = new Object[topicWords.size()];
 						topic.probability = topicWeights.get(i);
-							topic.id = topicIds.get(i);
-							for (int k = 0; k < topicWords.size(); k++) {
-								String topicWord = topicWords.get(k);
-								topic.topicWords[i] = topicWord; 
-							}
-							topic.modelId = modelID;
-							topic.modelVersion = modelVersion;
-							topics.add(topic);
-						}	
-						savedModel.index.put(docId, topics);
-						log.info("Indexed document: " + docId);
-						Collection<AutoDescriptor> autoDescs = JCasUtil.select(aJCas, AutoDescriptor.class);
-						AutoDescriptor autoDesc;
-						if (!autoDescs.isEmpty())
-							autoDesc = autoDescs.iterator().next();
-						else{ autoDesc = new AutoDescriptor(aJCas); autoDesc.addToIndexes();}
+						topic.id = topicIds.get(i);
+						for (int k = 0; k < topicWords.size(); k++) {
+							String topicWord = topicWords.get(k);
+							topic.topicWords[i] = topicWord; 
+						}
+						topic.modelId = modelID;
+						topic.modelVersion = modelVersion;
+						topics.add(topic);
+					}	
+					savedModel.index.put(docId, topics);
+					Collection<AutoDescriptor> autoDescs = JCasUtil.select(aJCas, AutoDescriptor.class);
+					AutoDescriptor autoDesc;
+					if (!autoDescs.isEmpty())
+						autoDesc = autoDescs.iterator().next();
+					else{ autoDesc = new AutoDescriptor(aJCas); autoDesc.addToIndexes();}
 					
-						FSArray dt = autoDesc.getDocumentTopics();
-						dt = JCoReTools.addToFSArray(dt, documentTopics);
-						autoDesc.setDocumentTopics(dt);
-					}
+					FSArray dt = autoDesc.getDocumentTopics();
+					dt = JCoReTools.addToFSArray(dt, documentTopics);
+					autoDesc.setDocumentTopics(dt);
 				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
