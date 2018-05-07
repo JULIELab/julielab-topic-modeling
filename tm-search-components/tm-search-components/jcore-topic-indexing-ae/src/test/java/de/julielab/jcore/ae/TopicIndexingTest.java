@@ -155,8 +155,7 @@ public class TopicIndexingTest {
 			AnalysisEngine topicIndexer = AnalysisEngineFactory.createEngine(
 					"de.julielab.jcore.ae.topiclabeling.desc.jcore-topic-indexing-ae", 
 					TopicIndexer.PARAM_TOPIC_MODEL_CONFIG, "src/test/resources/config_template.xml", 
-//					TopicIndexer.PARAM_TOPIC_MODEL_FILE_NAME, "src/test/resources/test_topic_model.ser",
-					TopicIndexer.PARAM_TOPIC_MODEL_FILE_NAME, "src/test/resources/model_eval_tm_b",
+					TopicIndexer.PARAM_TOPIC_MODEL_FILE_NAME, "src/test/resources/test_topic_model.ser",
 					TopicIndexer.PARAM_NUM_DISPLAYED_TOPIC_WORDS, 5, 
 					TopicIndexer.PARAM_STORE_IN_MODEL_INDEX, true
 					);
@@ -172,11 +171,10 @@ public class TopicIndexingTest {
 			Model savedIndexedModel = tm.readModel("src/test/resources/test_topic_model.ser" 
 					+ "-" + InetAddress.getLocalHost().getHostName()
 					+ "-" + ManagementFactory.getRuntimeMXBean().getName());
-			List<Topic> topics = savedIndexedModel.index.get("11442408");
-			System.out.println(topics.size());
 			
-			List<Topic> topics2 = savedIndexedModel.index.get("11442408");
-			System.out.println(topics2.size());
+			assertTrue(savedIndexedModel.index.containsKey("11442408"));
+			List<Topic> topics = savedIndexedModel.index.get("11442408");
+			assertNotNull(topics);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
