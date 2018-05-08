@@ -509,6 +509,9 @@ public class MalletTopicModeling implements ITopicModeling {
 		TopicInferencer inferencer = malletModel.getInferencer();
 		
 		TokenSequence jcorePreprocessed = (TokenSequence) doc.preprocessedData;
+		if (jcorePreprocessed.isEmpty()) {
+			LOGGER.warn("Document tokens are empty");
+		}
 		List<TokenSequence> jcorePreprocessedList = new ArrayList<>();
 		jcorePreprocessedList.add(jcorePreprocessed);
 //		List<TokenSequence> jcorePreprocessedList = (List<TokenSequence>) doc.preprocessedData;

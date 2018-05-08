@@ -620,6 +620,30 @@ public class MalletTopicModelingTest {
 		assertNotNull(savedIndexedModel.modelVersion);
 	}
 	
+	// TODO Delete after usage!
+	@Test
+	public void testServerIndexes() throws ConfigurationException, UnknownHostException {
+		MalletTopicModeling tm = new MalletTopicModeling();
+		
+		Model savedIndexedModel = tm.readModel("src/test/resources/"
+				+ "models_with_index/model_eval_tm_a-dawkins-10101@dawkins"); 
+		assertTrue(savedIndexedModel.index.containsKey("10071809") 
+				|| savedIndexedModel.index.containsKey("11053143")
+				|| savedIndexedModel.index.containsKey("11442408")
+				|| savedIndexedModel.index.containsKey("11541207")
+				|| savedIndexedModel.index.containsKey("12225739")
+				|| savedIndexedModel.index.containsKey("12390745")
+				|| savedIndexedModel.index.containsKey("7610069")
+				|| savedIndexedModel.index.containsKey("8283956")
+				|| savedIndexedModel.index.containsKey("8841806")
+				|| savedIndexedModel.index.containsKey("9636432"));
+		assertNotNull(savedIndexedModel.index);
+		assertNotNull(savedIndexedModel.malletModel);
+		assertNotNull(savedIndexedModel.modelId);
+		assertNotNull(savedIndexedModel.ModelIdpubmedId);
+		assertNotNull(savedIndexedModel.modelVersion);
+	}
+	
 //	@Test
 //	public void testBuildTopicsFromModel() throws ConfigurationException {
 //		MalletTopicModeling tm = new MalletTopicModeling(
