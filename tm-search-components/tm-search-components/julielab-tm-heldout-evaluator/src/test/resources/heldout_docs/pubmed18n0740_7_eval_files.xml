@@ -1,0 +1,3081 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE PubmedArticleSet SYSTEM "http://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_180101.dtd">
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078990</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>04</Month>
+        <Day>04</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2012</Year>
+        <Month>11</Month>
+        <Day>23</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1528-0012</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>143</Volume>
+            <Issue>6</Issue>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Dec</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Gastroenterology</Title>
+          <ISOAbbreviation>Gastroenterology</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>An unusual cause of chest pain.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>1438, 1692</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1053/j.gastro.2012.07.015</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0016-5085(12)01008-6</ELocationID>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Chapman</LastName>
+            <ForeName>Thomas P</ForeName>
+            <Initials>TP</Initials>
+            <AffiliationInfo>
+              <Affiliation>Gastroenterology Department, Wycombe Hospital, High Wycombe, United Kingdom.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Gorard</LastName>
+            <ForeName>David A</ForeName>
+            <Initials>DA</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Johns</LastName>
+            <ForeName>Emily A</ForeName>
+            <Initials>EA</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D002363">Case Reports</PublicationType>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>15</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>United States</Country>
+        <MedlineTA>Gastroenterology</MedlineTA>
+        <NlmUniqueID>0374630</NlmUniqueID>
+        <ISSNLinking>0016-5085</ISSNLinking>
+      </MedlineJournalInfo>
+      <SupplMeshList>
+        <SupplMeshName Type="Disease" UI="C536571">Boerhaave syndrome</SupplMeshName>
+      </SupplMeshList>
+      <CitationSubset>AIM</CitationSubset>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000369" MajorTopicYN="N">Aged, 80 and over</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D002637" MajorTopicYN="N">Chest Pain</DescriptorName>
+          <QualifierName UI="Q000209" MajorTopicYN="Y">etiology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D016099" MajorTopicYN="N">Endoscopy, Gastrointestinal</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004939" MajorTopicYN="N">Esophageal Perforation</DescriptorName>
+          <QualifierName UI="Q000150" MajorTopicYN="Y">complications</QualifierName>
+          <QualifierName UI="Q000175" MajorTopicYN="Y">diagnosis</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017809" MajorTopicYN="N">Fatal Outcome</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008477" MajorTopicYN="N">Mediastinal Diseases</DescriptorName>
+          <QualifierName UI="Q000150" MajorTopicYN="Y">complications</QualifierName>
+          <QualifierName UI="Q000175" MajorTopicYN="Y">diagnosis</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D010996" MajorTopicYN="N">Pleural Effusion</DescriptorName>
+          <QualifierName UI="Q000601" MajorTopicYN="N">surgery</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D013907" MajorTopicYN="N">Thoracostomy</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>06</Month>
+          <Day>03</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>07</Month>
+          <Day>03</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>07</Month>
+          <Day>16</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>4</Month>
+          <Day>5</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078990</ArticleId>
+        <ArticleId IdType="pii">S0016-5085(12)01008-6</ArticleId>
+        <ArticleId IdType="doi">10.1053/j.gastro.2012.07.015</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078991</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>04</Month>
+        <Day>04</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2016</Year>
+        <Month>11</Month>
+        <Day>25</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1528-0012</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>143</Volume>
+            <Issue>6</Issue>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Dec</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Gastroenterology</Title>
+          <ISOAbbreviation>Gastroenterology</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>A different kind of colon polyp.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>1440, 1693-4</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1053/j.gastro.2012.07.006</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0016-5085(12)00954-7</ELocationID>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Ferreira</LastName>
+            <ForeName>Aníbal</ForeName>
+            <Initials>A</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Gastroenterology, Hospital Braga, Braga, Portugal.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Gonçalves</LastName>
+            <ForeName>Raquel</ForeName>
+            <Initials>R</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Rolanda</LastName>
+            <ForeName>Carla</ForeName>
+            <Initials>C</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D002363">Case Reports</PublicationType>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>15</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>United States</Country>
+        <MedlineTA>Gastroenterology</MedlineTA>
+        <NlmUniqueID>0374630</NlmUniqueID>
+        <ISSNLinking>0016-5085</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D058846">Antibodies, Monoclonal, Murine-Derived</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D000970">Antineoplastic Agents</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>4F4X42SYQ6</RegistryNumber>
+          <NameOfSubstance UI="D000069283">Rituximab</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>AIM</CitationSubset>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000368" MajorTopicYN="N">Aged</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D058846" MajorTopicYN="N">Antibodies, Monoclonal, Murine-Derived</DescriptorName>
+          <QualifierName UI="Q000627" MajorTopicYN="N">therapeutic use</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D000970" MajorTopicYN="N">Antineoplastic Agents</DescriptorName>
+          <QualifierName UI="Q000627" MajorTopicYN="N">therapeutic use</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D003110" MajorTopicYN="N">Colonic Neoplasms</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="Y">diagnostic imaging</QualifierName>
+          <QualifierName UI="Q000188" MajorTopicYN="N">drug therapy</QualifierName>
+          <QualifierName UI="Q000473" MajorTopicYN="N">pathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D003111" MajorTopicYN="N">Colonic Polyps</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="Y">diagnostic imaging</QualifierName>
+          <QualifierName UI="Q000188" MajorTopicYN="N">drug therapy</QualifierName>
+          <QualifierName UI="Q000473" MajorTopicYN="N">pathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D019160" MajorTopicYN="N">Endosonography</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008224" MajorTopicYN="N">Lymphoma, Follicular</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="Y">diagnostic imaging</QualifierName>
+          <QualifierName UI="Q000188" MajorTopicYN="N">drug therapy</QualifierName>
+          <QualifierName UI="Q000473" MajorTopicYN="N">pathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D000069283" MajorTopicYN="N">Rituximab</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>06</Month>
+          <Day>21</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>07</Month>
+          <Day>09</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>4</Month>
+          <Day>5</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078991</ArticleId>
+        <ArticleId IdType="pii">S0016-5085(12)00954-7</ArticleId>
+        <ArticleId IdType="doi">10.1053/j.gastro.2012.07.006</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078992</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>03</Month>
+        <Day>14</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2017</Year>
+        <Month>01</Month>
+        <Day>12</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Print">0392-856X</ISSN>
+          <JournalIssue CitedMedium="Print">
+            <Volume>30</Volume>
+            <Issue>4 Suppl 73</Issue>
+            <PubDate>
+              <MedlineDate>2012 Jul-Aug</MedlineDate>
+            </PubDate>
+          </JournalIssue>
+          <Title>Clinical and experimental rheumatology</Title>
+          <ISOAbbreviation>Clin. Exp. Rheumatol.</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Psoriatic arthritis: treat-to-target.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>S123-5</MedlinePgn>
+        </Pagination>
+        <Abstract>
+          <AbstractText>Recently, the concept of 'treat-to-target' has emerged as a topic of great interest in rheumatology, particularly as regards the therapeutic approach to patients with rheumatoid arthritis RA). From observational data as well data from controlled clinical trials, there is a body of evidence supporting this idea. Thus, closely monitoring RA patients and adjusting therapies with the goal of achieving the lowest disease activity possible can result in optimal outcomes for patients. Based on the success in RA, interest in adopting a treat-to-target approach in other rheumatic conditions, including psoriatic arthritis (PsA) has arisen. It would appear logical that some data from 'treat-to-target' approaches in RA may readily be extrapolated to PsA, particularly as it relates to PsA patients with polyarticular peripheral arthritis. However, PsA is a heterogeneous disorder, with involvement in areas quite distinct from RA, including the skin and nails, the axial spine, and the entheses. Therefore, developing a treat-to-target strategy in PsA will require additional disease specific considerations to optimise its implementation.</AbstractText>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Kavanaugh</LastName>
+            <ForeName>Arthur</ForeName>
+            <Initials>A</Initials>
+            <AffiliationInfo>
+              <Affiliation>University of California, San Diego 92093-0943, USA. akavanaugh@ucsd.edu</Affiliation>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>16</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>Italy</Country>
+        <MedlineTA>Clin Exp Rheumatol</MedlineTA>
+        <NlmUniqueID>8308521</NlmUniqueID>
+        <ISSNLinking>0392-856X</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D018501">Antirheumatic Agents</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D018501" MajorTopicYN="N">Antirheumatic Agents</DescriptorName>
+          <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D015535" MajorTopicYN="N">Arthritis, Psoriatic</DescriptorName>
+          <QualifierName UI="Q000188" MajorTopicYN="Y">drug therapy</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D019468" MajorTopicYN="N">Disease Management</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D010347" MajorTopicYN="N">Patient Care Planning</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>14</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>19</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>3</Month>
+          <Day>15</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078992</ArticleId>
+        <ArticleId IdType="pii">6488</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078993</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>01</Month>
+        <Day>24</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2012</Year>
+        <Month>11</Month>
+        <Day>27</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1090-2449</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>132</Volume>
+            <Issue>4</Issue>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Dec</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Experimental parasitology</Title>
+          <ISOAbbreviation>Exp. Parasitol.</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Experimental evaluation of birds as disseminators of the cosmopolitan tick Rhipicephalus sanguineus (Acari: Ixodidae).</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>389-93</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.exppara.2012.10.004</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0014-4894(12)00315-3</ELocationID>
+        <Abstract>
+          <AbstractText>Rhipicephalus sanguineus is believed to be the most widespread tick species of the world and its dissemination seems to rely on the diffusion of its main host, the dog. Empirical observations indicate that several bird species in urban areas regularly steal dog food. Such circumstances create a chance for R. sanguineus ticks to climb on birds and carry ticks to another site. In this work we evaluated experimentally the likelihood of birds (chicks) to either feed and/or carry R. sanguineus ticks from an infested site to another and to infest a host (rabbit) in the new location. Chicks were not suitable hosts for R. sanguineus ticks. Not a single adult tick engorged on chicks, yield as well as weight of engorged larvae and nymphs were very low and feeding period of these ticks was very long. However, a few larvae and, chiefly, nymphs were delivered to a new location either mechanically or after attachment and engorging total or partially on chicks. A few of these ticks fed successfully on rabbits. Further evidence on the capacity of birds to introduce R. sanguineus into non-infested dog settings should be provided by systematic examination of birds from urban areas, close to tick infested households.</AbstractText>
+          <CopyrightInformation>Copyright © 2012 Elsevier Inc. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Szabó</LastName>
+            <ForeName>M P J</ForeName>
+            <Initials>MP</Initials>
+            <AffiliationInfo>
+              <Affiliation>Faculdade de Medicina Veterinária, Universidade Federal de Uberlândia, Av. Pará, 1720/Campus Umuarama-Bloco 2T, 38400-902 Uberlândia, Minas Gerais, Brazil. szabo@famev.ufu.br</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Rossi</LastName>
+            <ForeName>G F</ForeName>
+            <Initials>GF</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Cabral</LastName>
+            <ForeName>D D</ForeName>
+            <Initials>DD</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Martins</LastName>
+            <ForeName>M M</ForeName>
+            <Initials>MM</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Gerardi</LastName>
+            <ForeName>M</ForeName>
+            <Initials>M</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Amorim</LastName>
+            <ForeName>M P</ForeName>
+            <Initials>MP</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Tsuruta</LastName>
+            <ForeName>S A</ForeName>
+            <Initials>SA</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>16</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>United States</Country>
+        <MedlineTA>Exp Parasitol</MedlineTA>
+        <NlmUniqueID>0370713</NlmUniqueID>
+        <ISSNLinking>0014-4894</ISSNLinking>
+      </MedlineJournalInfo>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D002645" MajorTopicYN="N">Chickens</DescriptorName>
+          <QualifierName UI="Q000469" MajorTopicYN="Y">parasitology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004285" MajorTopicYN="N">Dogs</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D058507" MajorTopicYN="N">Host Specificity</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006790" MajorTopicYN="N">Host-Parasite Interactions</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D007814" MajorTopicYN="N">Larva</DescriptorName>
+          <QualifierName UI="Q000502" MajorTopicYN="N">physiology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009758" MajorTopicYN="N">Nymph</DescriptorName>
+          <QualifierName UI="Q000502" MajorTopicYN="N">physiology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011201" MajorTopicYN="N">Poultry Diseases</DescriptorName>
+          <QualifierName UI="Q000469" MajorTopicYN="N">parasitology</QualifierName>
+          <QualifierName UI="Q000635" MajorTopicYN="Y">transmission</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011817" MajorTopicYN="N">Rabbits</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D048508" MajorTopicYN="N">Rhipicephalus sanguineus</DescriptorName>
+          <QualifierName UI="Q000502" MajorTopicYN="Y">physiology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D013984" MajorTopicYN="N">Tick Infestations</DescriptorName>
+          <QualifierName UI="Q000469" MajorTopicYN="N">parasitology</QualifierName>
+          <QualifierName UI="Q000635" MajorTopicYN="N">transmission</QualifierName>
+          <QualifierName UI="Q000662" MajorTopicYN="Y">veterinary</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>08</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>27</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>02</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>1</Month>
+          <Day>25</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078993</ArticleId>
+        <ArticleId IdType="pii">S0014-4894(12)00315-3</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.exppara.2012.10.004</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078994</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>02</Month>
+        <Day>15</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2012</Year>
+        <Month>12</Month>
+        <Day>19</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1460-2156</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>135</Volume>
+            <Issue>Pt 12</Issue>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Dec</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Brain : a journal of neurology</Title>
+          <ISOAbbreviation>Brain</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Microcystic macular oedema confirmed, but not specific for multiple sclerosis.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>e226; author reply e227</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1093/brain/aws216</ELocationID>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Balk</LastName>
+            <ForeName>Lisanne J</ForeName>
+            <Initials>LJ</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Killestein</LastName>
+            <ForeName>Joep</ForeName>
+            <Initials>J</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Polman</LastName>
+            <ForeName>Chris H</ForeName>
+            <Initials>CH</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Uitdehaag</LastName>
+            <ForeName>Bernard M J</ForeName>
+            <Initials>BM</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Petzold</LastName>
+            <ForeName>Axel</ForeName>
+            <Initials>A</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016420">Comment</PublicationType>
+          <PublicationType UI="D016422">Letter</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>17</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>Brain</MedlineTA>
+        <NlmUniqueID>0372537</NlmUniqueID>
+        <ISSNLinking>0006-8950</ISSNLinking>
+      </MedlineJournalInfo>
+      <CitationSubset>AIM</CitationSubset>
+      <CitationSubset>IM</CitationSubset>
+      <CommentsCorrectionsList>
+        <CommentsCorrections RefType="CommentOn">
+          <RefSource>Brain. 2012 Jun;135(Pt 6):1786-93</RefSource>
+          <PMID Version="1">22539259</PMID>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008269" MajorTopicYN="N">Macular Edema</DescriptorName>
+          <QualifierName UI="Q000150" MajorTopicYN="Y">complications</QualifierName>
+          <QualifierName UI="Q000175" MajorTopicYN="Y">diagnosis</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009103" MajorTopicYN="N">Multiple Sclerosis</DescriptorName>
+          <QualifierName UI="Q000150" MajorTopicYN="Y">complications</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>2</Month>
+          <Day>16</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078994</ArticleId>
+        <ArticleId IdType="pii">aws216</ArticleId>
+        <ArticleId IdType="doi">10.1093/brain/aws216</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078995</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>05</Month>
+        <Day>13</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2012</Year>
+        <Month>11</Month>
+        <Day>26</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1769-6690</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>42</Volume>
+            <Issue>11</Issue>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Nov</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Medecine et maladies infectieuses</Title>
+          <ISOAbbreviation>Med Mal Infect</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Vaccinal issues between Belgian and French travelers.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>545-52</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.medmal.2012.08.002</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0399-077X(12)00204-1</ELocationID>
+        <Abstract>
+          <AbstractText Label="INTRODUCTION" NlmCategory="BACKGROUND">The yellow-fever vaccination center of the Tourcoing Hospital (France) has been accessible to Belgian travelers since its opening in 1994.</AbstractText>
+          <AbstractText Label="METHOD" NlmCategory="METHODS">The authors reported the specificities of these consultations during the year 2010, by retrospectively analyzing electronic medical records.</AbstractText>
+          <AbstractText Label="RESULTS" NlmCategory="RESULTS">Some medical issues encountered during the consultation were due to differences in vaccination schedules: for the polio vaccine, since the last dose is administered between 5 and 7 years of age in Belgium; and for the measles vaccine since a late two-dose schedule (second dose between 12 and 13 years of age) is recommended in this country. Moreover, some specific vaccines are available only in Belgium: a diphtheria-tetanus bivalent vaccine, and a live attenuated oral typhoid vaccine.</AbstractText>
+          <AbstractText Label="DISCUSSION" NlmCategory="CONCLUSIONS">The specificities of the Belgian border traveler consultation in our French yellow-fever center are due to a difference in European vaccination schedules; the physician must be aware of these.</AbstractText>
+          <AbstractText Label="CONCLUSION" NlmCategory="CONCLUSIONS">The physician has to propose updates on vaccination schedules, and be aware of yellow-fever vaccine compatibility with vaccines recently administered in Belgium.</AbstractText>
+          <CopyrightInformation>Copyright © 2012 Elsevier Masson SAS. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Nguyen</LastName>
+            <ForeName>S</ForeName>
+            <Initials>S</Initials>
+            <AffiliationInfo>
+              <Affiliation>Service Universitaire de Maladies Infectieuses et du Voyageur, Centre Hospitalier Tourcoing, 59208 Tourcoing, France. nguyen.sophie@club-internet.fr</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Huleux</LastName>
+            <ForeName>T</ForeName>
+            <Initials>T</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Choisy</LastName>
+            <ForeName>P</ForeName>
+            <Initials>P</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Senneville</LastName>
+            <ForeName>E</ForeName>
+            <Initials>E</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Ajana</LastName>
+            <ForeName>F</ForeName>
+            <Initials>F</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D003160">Comparative Study</PublicationType>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>15</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>France</Country>
+        <MedlineTA>Med Mal Infect</MedlineTA>
+        <NlmUniqueID>0311416</NlmUniqueID>
+        <ISSNLinking>0399-077X</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D001500">BCG Vaccine</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D015721">Diphtheria-Tetanus-Pertussis Vaccine</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D014765">Viral Vaccines</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000293" MajorTopicYN="N">Adolescent</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D000328" MajorTopicYN="N">Adult</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D000367" MajorTopicYN="N">Age Factors</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D001500" MajorTopicYN="N">BCG Vaccine</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D001530" MajorTopicYN="N" Type="Geographic">Belgium</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D002648" MajorTopicYN="N">Child</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D002675" MajorTopicYN="N">Child, Preschool</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D015721" MajorTopicYN="N">Diphtheria-Tetanus-Pertussis Vaccine</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004641" MajorTopicYN="N">Emigration and Immigration</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005602" MajorTopicYN="N" Type="Geographic">France</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006291" MajorTopicYN="N">Health Policy</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D007115" MajorTopicYN="Y">Immunization Schedule</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D007117" MajorTopicYN="N">Immunization, Secondary</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D007223" MajorTopicYN="N">Infant</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008875" MajorTopicYN="N">Middle Aged</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017410" MajorTopicYN="N">Practice Guidelines as Topic</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D012189" MajorTopicYN="N">Retrospective Studies</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D014195" MajorTopicYN="Y">Travel</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D014611" MajorTopicYN="N">Vaccination</DescriptorName>
+          <QualifierName UI="Q000706" MajorTopicYN="Y">statistics &amp; numerical data</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D014765" MajorTopicYN="N">Viral Vaccines</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D055815" MajorTopicYN="N">Young Adult</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>01</Month>
+          <Day>19</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>03</Month>
+          <Day>07</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>08</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>5</Month>
+          <Day>15</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078995</ArticleId>
+        <ArticleId IdType="pii">S0399-077X(12)00204-1</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.medmal.2012.08.002</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078996</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>01</Month>
+        <Day>21</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2013</Year>
+        <Month>11</Month>
+        <Day>21</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1873-6424</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>172</Volume>
+            <PubDate>
+              <Year>2013</Year>
+              <Month>Jan</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Environmental pollution (Barking, Essex : 1987)</Title>
+          <ISOAbbreviation>Environ. Pollut.</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Assessing ozone and nitrogen impact on net primary productivity with a Generalised non-Linear Model.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>250-63</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.envpol.2012.08.015</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0269-7491(12)00399-5</ELocationID>
+        <Abstract>
+          <AbstractText>Some studies suggest that in Europe the majority of forest growth increment can be accounted for N deposition and very little by elevated CO(2). High ozone (O(3)) concentrations cause reductions in carbon fixation in native plants by offsetting the effects of elevated CO(2) or N deposition. The cause-effect relationships between primary productivity (NPP) of Quercus cerris, Q. ilex and Fagus sylvatica plant species and climate and pollutants (O(3) and N deposition) in Italy have been investigated by application of Generalised Linear/non-Linear regression model (GLZ model). The GLZ model highlighted: i) cumulative O(3) concentration-based indicator (AOT40F) did not significantly affect NPP; ii) a differential action of oxidised and reduced nitrogen depositions to NPP was linked to the geographical location; iii) the species-specific variation of NPP caused by combination of pollutants and climatic variables could be a potentially important drive-factor for the plant species' shift as response to the future climate change.</AbstractText>
+          <CopyrightInformation>Copyright © 2012 Elsevier Ltd. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>De Marco</LastName>
+            <ForeName>Alessandra</ForeName>
+            <Initials>A</Initials>
+            <AffiliationInfo>
+              <Affiliation>Italian National Agency for New Technologies, Energy and the Environment (ENEA), C.R. Casaccia, Via Anguillarese 301, 00123 S. Maria di Galeria, Rome, Italy. alessandra.demarco@casaccia.enea.it</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Screpanti</LastName>
+            <ForeName>Augusto</ForeName>
+            <Initials>A</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Attorre</LastName>
+            <ForeName>Fabio</ForeName>
+            <Initials>F</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Proietti</LastName>
+            <ForeName>Chiara</ForeName>
+            <Initials>C</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Vitale</LastName>
+            <ForeName>Marcello</ForeName>
+            <Initials>M</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>16</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>Environ Pollut</MedlineTA>
+        <NlmUniqueID>8804476</NlmUniqueID>
+        <ISSNLinking>0269-7491</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D000393">Air Pollutants</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>66H7ZZK23N</RegistryNumber>
+          <NameOfSubstance UI="D010126">Ozone</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>N762921K75</RegistryNumber>
+          <NameOfSubstance UI="D009584">Nitrogen</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000393" MajorTopicYN="N">Air Pollutants</DescriptorName>
+          <QualifierName UI="Q000032" MajorTopicYN="Y">analysis</QualifierName>
+          <QualifierName UI="Q000633" MajorTopicYN="N">toxicity</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D000397" MajorTopicYN="N">Air Pollution</DescriptorName>
+          <QualifierName UI="Q000706" MajorTopicYN="N">statistics &amp; numerical data</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D057231" MajorTopicYN="N">Climate Change</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004784" MajorTopicYN="Y">Environmental Monitoring</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D007558" MajorTopicYN="N" Type="Geographic">Italy</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009584" MajorTopicYN="N">Nitrogen</DescriptorName>
+          <QualifierName UI="Q000032" MajorTopicYN="Y">analysis</QualifierName>
+          <QualifierName UI="Q000633" MajorTopicYN="N">toxicity</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017711" MajorTopicYN="N">Nonlinear Dynamics</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D010126" MajorTopicYN="N">Ozone</DescriptorName>
+          <QualifierName UI="Q000032" MajorTopicYN="Y">analysis</QualifierName>
+          <QualifierName UI="Q000633" MajorTopicYN="N">toxicity</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D014197" MajorTopicYN="N">Trees</DescriptorName>
+          <QualifierName UI="Q000187" MajorTopicYN="N">drug effects</QualifierName>
+          <QualifierName UI="Q000254" MajorTopicYN="N">growth &amp; development</QualifierName>
+          <QualifierName UI="Q000502" MajorTopicYN="Y">physiology</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>04</Month>
+          <Day>04</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>17</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>28</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>1</Month>
+          <Day>23</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078996</ArticleId>
+        <ArticleId IdType="pii">S0269-7491(12)00399-5</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.envpol.2012.08.015</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078997</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>01</Month>
+        <Day>21</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2015</Year>
+        <Month>11</Month>
+        <Day>19</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1873-6424</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>172</Volume>
+            <PubDate>
+              <Year>2013</Year>
+              <Month>Jan</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Environmental pollution (Barking, Essex : 1987)</Title>
+          <ISOAbbreviation>Environ. Pollut.</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>The ecological effects of a herbicide-insecticide mixture on an experimental freshwater ecosystem.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>264-74</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.envpol.2012.09.002</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0269-7491(12)00403-4</ELocationID>
+        <Abstract>
+          <AbstractText>The effects of a co-occurring insecticide-herbicide mixture were evaluated using model ecosystems (microcosms) in the laboratory. Microcosms dosed with a high concentration (10 μg/L) of the insecticide terbufos, alone and as a mixture with the herbicide atrazine (25 μg/L), exhibited community level effects attributed to the elimination and decline of invertebrate populations, and also indirect effects. There were no community level effects at a lower concentration of terbufos (0.1 μg/L) alone or in a mixture with atrazine, although delayed population effects were observed. Female chironomids also emerged later and those from terbufos-only microcosms were smaller. Exposure to atrazine alone was also associated with lower abundances of cladocerans and reduced emergence of chironomids. The risk posed by atrazine is low and is unlikely to exacerbate the effects of terbufos. Nevertheless, the population-level effects highlight that terbufos poses a potential risk to aquatic ecosystems, regardless of whether atrazine is also present.</AbstractText>
+          <CopyrightInformation>Copyright © 2012 Elsevier Ltd. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Choung</LastName>
+            <ForeName>Catherine B</ForeName>
+            <Initials>CB</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Biological Sciences, Macquarie University, NSW 2109, Australia. catherinebochoung@gmail.com</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Hyne</LastName>
+            <ForeName>Ross V</ForeName>
+            <Initials>RV</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Stevens</LastName>
+            <ForeName>Mark M</ForeName>
+            <Initials>MM</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Hose</LastName>
+            <ForeName>Grant C</ForeName>
+            <Initials>GC</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>16</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>Environ Pollut</MedlineTA>
+        <NlmUniqueID>8804476</NlmUniqueID>
+        <ISSNLinking>0269-7491</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D006540">Herbicides</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D007306">Insecticides</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D009946">Organothiophosphorus Compounds</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D014874">Water Pollutants, Chemical</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>M83BN0F8R9</RegistryNumber>
+          <NameOfSubstance UI="C012568">terbufos</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>QJA9M5H4IM</RegistryNumber>
+          <NameOfSubstance UI="D001280">Atrazine</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D001280" MajorTopicYN="N">Atrazine</DescriptorName>
+          <QualifierName UI="Q000633" MajorTopicYN="Y">toxicity</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004305" MajorTopicYN="N">Dose-Response Relationship, Drug</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017753" MajorTopicYN="N">Ecosystem</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005618" MajorTopicYN="N">Fresh Water</DescriptorName>
+          <QualifierName UI="Q000737" MajorTopicYN="N">chemistry</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006540" MajorTopicYN="N">Herbicides</DescriptorName>
+          <QualifierName UI="Q000633" MajorTopicYN="Y">toxicity</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D007306" MajorTopicYN="N">Insecticides</DescriptorName>
+          <QualifierName UI="Q000633" MajorTopicYN="Y">toxicity</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D007448" MajorTopicYN="N">Invertebrates</DescriptorName>
+          <QualifierName UI="Q000187" MajorTopicYN="Y">drug effects</QualifierName>
+          <QualifierName UI="Q000502" MajorTopicYN="N">physiology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009946" MajorTopicYN="N">Organothiophosphorus Compounds</DescriptorName>
+          <QualifierName UI="Q000633" MajorTopicYN="Y">toxicity</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D014874" MajorTopicYN="N">Water Pollutants, Chemical</DescriptorName>
+          <QualifierName UI="Q000633" MajorTopicYN="Y">toxicity</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>03</Month>
+          <Day>14</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>17</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>08</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>1</Month>
+          <Day>23</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078997</ArticleId>
+        <ArticleId IdType="pii">S0269-7491(12)00403-4</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.envpol.2012.09.002</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078998</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>04</Month>
+        <Day>24</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2015</Year>
+        <Month>02</Month>
+        <Day>22</Day>
+      </DateRevised>
+      <Article PubModel="Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1748-717X</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>7</Volume>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Oct</Month>
+              <Day>19</Day>
+            </PubDate>
+          </JournalIssue>
+          <Title>Radiation oncology (London, England)</Title>
+          <ISOAbbreviation>Radiat Oncol</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Designed-seamless irradiation technique for extended whole mediastinal proton-beam irradiation for esophageal cancer.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>173</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1186/1748-717X-7-173</ELocationID>
+        <Abstract>
+          <AbstractText Label="BACKGROUND" NlmCategory="BACKGROUND">Proton-beam therapy (PBT) provides therapeutic advantages over conformal x-ray therapy in sparing organs at risk when treating esophageal cancer because of the fundamental physical dose distribution of the proton-beam. However, cases with extended esophageal lesions are difficult to treat with conventional PBT with a single isocentric field, as the length of the planning target volume (PTV) is longer than the available PBT field size in many facilities. In this study, the feasibility of a practical technique to effectively match PBT fields for esophageal cancer with a larger regional field beyond the available PBT field size was investigated.</AbstractText>
+          <AbstractText Label="METHODS" NlmCategory="METHODS">Twenty esophageal cancer patients with a larger regional field than the available PBT single-field size (15 cm in our facility) were analyzed. The PTV was divided into two sections to be covered by a single PBT field. Subsequently, each PTV isocenter was aligned in a cranial-caudal (CC) axis to rule out any influence by the movement of the treatment couch in anterior-posterior and left-right directions. To obtain the appropriate dose distributions, a designed-seamless irradiation technique (D-SLIT) was proposed. This technique requires the following two adjustments: (A) blocking a part of the PTV by multi-leaf collimator(s) (MLCs); and (B) fine-tuning the isocenter distance by the half-width of the MLC leaf (2.5 mm in our facility). After these steps, the inferior border of the cranial field was designed to match the superior border of the caudal field. Dose distributions along the CC axis around the field junction were evaluated by the treatment-planning system. Dose profiles were validated with imaging plates in all cases.</AbstractText>
+          <AbstractText Label="RESULTS" NlmCategory="RESULTS">The average and standard deviation of minimum dose, maximum dose, and dose range between maximum and minimum doses around the field junction by the treatment-planning system were 95.9 ± 3.2%, 105.3 ± 4.1%, and 9.4 ± 5.2%. The dose profile validated by the imaging plate correlated with the results of the treatment-planning system in each case, with an error range within 4.3%.</AbstractText>
+          <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">Dose distributions around the field junction were applied using D-SLIT. D-SLIT can be a useful treatment strategy for PBT of extended esophageal cancer.</AbstractText>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Okonogi</LastName>
+            <ForeName>Noriyuki</ForeName>
+            <Initials>N</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Radiation Oncology, University of Tsukuba, Tsukuba, Ibaraki, Japan. noriyukiokonogi@gmail.com</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Hashimoto</LastName>
+            <ForeName>Takatuki</ForeName>
+            <Initials>T</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Ishida</LastName>
+            <ForeName>Masaya</ForeName>
+            <Initials>M</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Ohno</LastName>
+            <ForeName>Toshiki</ForeName>
+            <Initials>T</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Terunuma</LastName>
+            <ForeName>Toshiyuki</ForeName>
+            <Initials>T</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Okumura</LastName>
+            <ForeName>Toshiyuki</ForeName>
+            <Initials>T</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Sakae</LastName>
+            <ForeName>Takeji</ForeName>
+            <Initials>T</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Sakurai</LastName>
+            <ForeName>Hideyuki</ForeName>
+            <Initials>H</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016430">Clinical Trial</PublicationType>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>19</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>Radiat Oncol</MedlineTA>
+        <NlmUniqueID>101265111</NlmUniqueID>
+        <ISSNLinking>1748-717X</ISSNLinking>
+      </MedlineJournalInfo>
+      <CitationSubset>IM</CitationSubset>
+      <CommentsCorrectionsList>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 2001 Jan 1;49(1):261-4</RefSource>
+          <PMID Version="1">11163523</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Surg Oncol. 2000 Dec;75(4):227-31</RefSource>
+          <PMID Version="1">11135262</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>N Engl J Med. 2003 Dec 4;349(23):2241-52</RefSource>
+          <PMID Version="1">14657432</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 2004 Nov 1;60(3):951-8</RefSource>
+          <PMID Version="1">15465214</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 1989 Oct;17(4):853-7</RefSource>
+          <PMID Version="1">2777676</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Med Phys. 1995 Jan;22(1):37-53</RefSource>
+          <PMID Version="1">7715569</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Clin Oncol. 1997 Jan;15(1):277-84</RefSource>
+          <PMID Version="1">8996153</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 1998 May 1;41(2):441-50</RefSource>
+          <PMID Version="1">9607363</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Radiother Oncol. 2006 Feb;78(2):217-22</RefSource>
+          <PMID Version="1">16330119</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Phys Med Biol. 2007 Jun 21;52(12):N265-75</RefSource>
+          <PMID Version="1">17664545</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 2008 Jan 1;70(1):145-53</RefSource>
+          <PMID Version="1">17855008</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 2008 Sep 1;72(1):278-87</RefSource>
+          <PMID Version="1">18722278</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Med Phys. 2009 Sep;36(9):4068-83</RefSource>
+          <PMID Version="1">19810479</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Clin Oncol (R Coll Radiol). 2011 Apr;23(3):182-8</RefSource>
+          <PMID Version="1">21232928</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 2011 Nov 1;81(3):684-90</RefSource>
+          <PMID Version="1">20932658</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Jpn J Clin Oncol. 2012 Feb;42(2):139-47</RefSource>
+          <PMID Version="1">22172347</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Radiat Oncol Biol Phys. 2000 Jul 1;47(4):979-84</RefSource>
+          <PMID Version="1">10863068</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Technol Cancer Res Treat. 2003 Oct;2(5):389-99</RefSource>
+          <PMID Version="1">14529304</PMID>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000328" MajorTopicYN="N">Adult</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D002277" MajorTopicYN="N">Carcinoma</DescriptorName>
+          <QualifierName UI="Q000532" MajorTopicYN="Y">radiotherapy</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004938" MajorTopicYN="N">Esophageal Neoplasms</DescriptorName>
+          <QualifierName UI="Q000532" MajorTopicYN="Y">radiotherapy</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005240" MajorTopicYN="N">Feasibility Studies</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008482" MajorTopicYN="N">Mediastinum</DescriptorName>
+          <QualifierName UI="Q000473" MajorTopicYN="N">pathology</QualifierName>
+          <QualifierName UI="Q000528" MajorTopicYN="Y">radiation effects</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D058958" MajorTopicYN="N">Organs at Risk</DescriptorName>
+          <QualifierName UI="Q000473" MajorTopicYN="N">pathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D061766" MajorTopicYN="N">Proton Therapy</DescriptorName>
+          <QualifierName UI="Q000379" MajorTopicYN="Y">methods</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011879" MajorTopicYN="N">Radiotherapy Dosage</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011880" MajorTopicYN="N">Radiotherapy Planning, Computer-Assisted</DescriptorName>
+          <QualifierName UI="Q000379" MajorTopicYN="Y">methods</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D020266" MajorTopicYN="N">Radiotherapy, Conformal</DescriptorName>
+          <QualifierName UI="Q000379" MajorTopicYN="N">methods</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D047368" MajorTopicYN="N">Tumor Burden</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D054928" MajorTopicYN="N">Validation Studies as Topic</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+      <OtherID Source="NLM">PMC3508937</OtherID>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>07</Month>
+          <Day>07</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>13</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>4</Month>
+          <Day>25</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>epublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078998</ArticleId>
+        <ArticleId IdType="pii">1748-717X-7-173</ArticleId>
+        <ArticleId IdType="doi">10.1186/1748-717X-7-173</ArticleId>
+        <ArticleId IdType="pmc">PMC3508937</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23078999</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>05</Month>
+        <Day>13</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2016</Year>
+        <Month>11</Month>
+        <Day>25</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1879-291X</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>39</Volume>
+            <Issue>1</Issue>
+            <PubDate>
+              <Year>2013</Year>
+              <Month>Jan</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Ultrasound in medicine &amp; biology</Title>
+          <ISOAbbreviation>Ultrasound Med Biol</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>The effect of ultrasound output level on obstetric biometric measurements.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>37-43</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.ultrasmedbio.2012.08.011</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0301-5629(12)00475-9</ELocationID>
+        <Abstract>
+          <AbstractText>We tested the effect of reducing the ultrasound output energy on obstetric measurements made from two-dimensional (2-D) grayscale images. We measured three fetal structures (femur, umbilical vein and lateral cerebral ventricle) in 113 pregnant women, commencing with an output energy that provided a thermal index for bone (TIB) of ≤1.0, and then repeated the measurements at TIB ≤ 0.5 and then TIB ≤ 0.1. There was a trend toward shorter femur measurements and larger umbilical vein diameter measurements with decreasing output energy. However, since these effects (which did not exceed 0.03 mm) were very small compared with the inter- and intraobserver variations, they were considered to be of no clinical significance. Furthermore, the residuals did not increase when the output energy decreased, indicating that the precision of the measurements was unaltered. We conclude that using a reduced output energy setting corresponding to a TIB of 0.1 does not compromise ultrasound biometry findings.</AbstractText>
+          <CopyrightInformation>Copyright © 2013 World Federation for Ultrasound in Medicine &amp; Biology. Published by Elsevier Inc. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Sande</LastName>
+            <ForeName>Ragnar Kvie</ForeName>
+            <Initials>RK</Initials>
+            <AffiliationInfo>
+              <Affiliation>Clinical Fetal Physiology Research Group, Department of Clinical Medicine, University of Bergen, Bergen, Norway. ragnar.sande@gmail.com</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Matre</LastName>
+            <ForeName>Knut</ForeName>
+            <Initials>K</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Eide</LastName>
+            <ForeName>Geir Egil</ForeName>
+            <Initials>GE</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Kiserud</LastName>
+            <ForeName>Torvid</ForeName>
+            <Initials>T</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>15</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>Ultrasound Med Biol</MedlineTA>
+        <NlmUniqueID>0410553</NlmUniqueID>
+        <ISSNLinking>0301-5629</ISSNLinking>
+      </MedlineJournalInfo>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D015992" MajorTopicYN="N">Body Mass Index</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005269" MajorTopicYN="N">Femur</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="Y">diagnostic imaging</QualifierName>
+          <QualifierName UI="Q000196" MajorTopicYN="N">embryology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005865" MajorTopicYN="N">Gestational Age</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006358" MajorTopicYN="N">Hot Temperature</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D020547" MajorTopicYN="N">Lateral Ventricles</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="Y">diagnostic imaging</QualifierName>
+          <QualifierName UI="Q000196" MajorTopicYN="N">embryology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011247" MajorTopicYN="N">Pregnancy</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D016216" MajorTopicYN="Y">Ultrasonography, Prenatal</DescriptorName>
+          <QualifierName UI="Q000379" MajorTopicYN="N">methods</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D014471" MajorTopicYN="N">Umbilical Veins</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="Y">diagnostic imaging</QualifierName>
+          <QualifierName UI="Q000196" MajorTopicYN="N">embryology</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>04</Month>
+          <Day>24</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>07</Month>
+          <Day>18</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>15</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>5</Month>
+          <Day>15</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23078999</ArticleId>
+        <ArticleId IdType="pii">S0301-5629(12)00475-9</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.ultrasmedbio.2012.08.011</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23079000</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>05</Month>
+        <Day>13</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2016</Year>
+        <Month>11</Month>
+        <Day>25</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1879-291X</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>39</Volume>
+            <Issue>1</Issue>
+            <PubDate>
+              <Year>2013</Year>
+              <Month>Jan</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Ultrasound in medicine &amp; biology</Title>
+          <ISOAbbreviation>Ultrasound Med Biol</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Characterization of the left atrial vortex flow by two-dimensional transesophageal contrast echocardiography using particle image velocimetry.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>62-71</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.ultrasmedbio.2012.08.013</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S0301-5629(12)00514-5</ELocationID>
+        <Abstract>
+          <AbstractText>This article is the first clinical investigation of the quantitative left atrial (LA) vortex flow by two-dimensional (2-D) transesophageal contrast echocardiography (2-D-TECE) using vector particle image velocimetry (PIV). The aims of this study were to assess the feasibility of LA vortex flow analysis and to characterize and quantify the LA vortex flow in controls and in patients with atrial fibrillation (AF). Thirty-five controls and 30 patients with AF underwent transesophageal contrast echocardiography. The velocity vector was estimated by particle image velocimetry. The morphology and pulsatility of the LA vortex flow were compared between the control and AF groups. In all patients, quantitative LA vortex flow analysis was feasible. In the control group, multiple, pulsatile, compact and elliptical-shaped vortices were seen in the periphery of the LA. These vortices were persistently maintained and vectors were directed toward the atrioventricular inflow. In the AF group, a large, merged, lower pulsatile and round-shaped vortex was observed in the center of the LA. In comparisons of vortex parameters, the relative strength was significantly lower in the AF group (1.624 ± 0.501 vs. 2.105 ± 0.226, p &lt; 0.001). It is feasible to characterize and quantify the LA vortex flow by transesophageal contrast echocardiography in patients with AF, which offers a new method to obtain additional information on LA hemodynamics. The approach has the potential for early detection of the LA dysfunction and in decisions regarding treatment strategy and guiding anticoagulation treatment in patients with AF.</AbstractText>
+          <CopyrightInformation>Copyright © 2013 World Federation for Ultrasound in Medicine &amp; Biology. Published by Elsevier Inc. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Park</LastName>
+            <ForeName>Kyu-Hwan</ForeName>
+            <Initials>KH</Initials>
+            <AffiliationInfo>
+              <Affiliation>Division of Cardiology, Yeungnam University, Daegu, Korea.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Son</LastName>
+            <ForeName>Jang-Won</ForeName>
+            <Initials>JW</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Park</LastName>
+            <ForeName>Won-Jong</ForeName>
+            <Initials>WJ</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Lee</LastName>
+            <ForeName>Sang-Hee</ForeName>
+            <Initials>SH</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Kim</LastName>
+            <ForeName>Ung</ForeName>
+            <Initials>U</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Park</LastName>
+            <ForeName>Jong-Seon</ForeName>
+            <Initials>JS</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Shin</LastName>
+            <ForeName>Dong-Gu</ForeName>
+            <Initials>DG</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Kim</LastName>
+            <ForeName>Young-Jo</ForeName>
+            <Initials>YJ</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Choi</LastName>
+            <ForeName>Jung-Hyun</ForeName>
+            <Initials>JH</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Houle</LastName>
+            <ForeName>Helene</ForeName>
+            <Initials>H</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Vannan</LastName>
+            <ForeName>Mani A</ForeName>
+            <Initials>MA</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Hong</LastName>
+            <ForeName>Geu-Ru</ForeName>
+            <Initials>GR</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>15</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>Ultrasound Med Biol</MedlineTA>
+        <NlmUniqueID>0410553</NlmUniqueID>
+        <ISSNLinking>0301-5629</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D003287">Contrast Media</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D001281" MajorTopicYN="N">Atrial Fibrillation</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="N">diagnostic imaging</QualifierName>
+          <QualifierName UI="Q000503" MajorTopicYN="N">physiopathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D016275" MajorTopicYN="Y">Atrial Function</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D003287" MajorTopicYN="Y">Contrast Media</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004452" MajorTopicYN="N">Echocardiography</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017548" MajorTopicYN="Y">Echocardiography, Transesophageal</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006325" MajorTopicYN="N">Heart Atria</DescriptorName>
+          <QualifierName UI="Q000000981" MajorTopicYN="Y">diagnostic imaging</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008875" MajorTopicYN="N">Middle Aged</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009200" MajorTopicYN="N">Myocardial Contraction</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D012212" MajorTopicYN="Y">Rheology</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>02</Month>
+          <Day>06</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>07</Month>
+          <Day>25</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>19</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>5</Month>
+          <Day>15</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23079000</ArticleId>
+        <ArticleId IdType="pii">S0301-5629(12)00514-5</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.ultrasmedbio.2012.08.013</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23079001</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>04</Month>
+        <Day>18</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2017</Year>
+        <Month>02</Month>
+        <Day>20</Day>
+      </DateRevised>
+      <Article PubModel="Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">2050-6511</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>13</Volume>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Oct</Month>
+              <Day>18</Day>
+            </PubDate>
+          </JournalIssue>
+          <Title>BMC pharmacology &amp; toxicology</Title>
+          <ISOAbbreviation>BMC Pharmacol Toxicol</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Nitric oxide and histone deacetylases modulate cocaine-induced mu-opioid receptor levels in PC12 cells.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>11</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1186/2050-6511-13-11</ELocationID>
+        <Abstract>
+          <AbstractText Label="BACKGROUND" NlmCategory="BACKGROUND">Cocaine exposure has been reported to alter central μ-opioid receptor (MOR) expression in vivo. The present study employed an in vitro cellular model to explore possible mechanisms that may be involved in this action of cocaine.</AbstractText>
+          <AbstractText Label="METHODS" NlmCategory="METHODS">To assess the effects of cocaine on MOR levels, two treatment regimens were tested in PC12 cells: single continuous or multiple intermittent. MOR protein levels were assessed by western blot analysis and quantitative PCR was used to determine relative MOR mRNA expression levels. To evaluate the role of nitric oxide (NO) and histone acetylation in cocaine-induced MOR expression, cells were pre-treated with the NO synthase inhibitor Nω-nitro-L-arginine methylester (L-NAME) or the non-selective histone acetyltransferase inhibitor curcumin.</AbstractText>
+          <AbstractText Label="RESULTS" NlmCategory="RESULTS">Both cocaine treatment regimens significantly increased MOR protein levels and protein stability, but only multiple intermittent treatments increased MOR mRNA levels as well as c-fos mRNA levels and activator protein 1 binding activity. Both regimens increased NO production, and pre-treatment with L-NAME prevented cocaine-induced increases in MOR protein and mRNA levels. Single and multiple cocaine treatment regimens inhibited histone deacetylase activity, and pre-treatment with curcumin prevented cocaine-induced up-regulation of MOR protein expression.</AbstractText>
+          <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">In the PC12 cell model, both NO and histone deacetylase activity regulate cocaine-induced MOR expression at both the transcriptional and post-transcriptional levels. Based on these novel findings, it is hypothesized that epigenetic mechanisms are implicated in cocaine's action on MOR expression in neurons.</AbstractText>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Winick-Ng</LastName>
+            <ForeName>Warren</ForeName>
+            <Initials>W</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Biomedical Sciences, University of Guelph, Guelph, Ontario, N1G 2W1, Canada.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Leri</LastName>
+            <ForeName>Francesco</ForeName>
+            <Initials>F</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Kalisch</LastName>
+            <ForeName>Bettina E</ForeName>
+            <Initials>BE</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>18</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>BMC Pharmacol Toxicol</MedlineTA>
+        <NlmUniqueID>101590449</NlmUniqueID>
+        <ISSNLinking>2050-6511</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D018765">Dopamine Uptake Inhibitors</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D011500">Protein Synthesis Inhibitors</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D012333">RNA, Messenger</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D017450">Receptors, Opioid, mu</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>31C4KY9ESH</RegistryNumber>
+          <NameOfSubstance UI="D009569">Nitric Oxide</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>98600C0908</RegistryNumber>
+          <NameOfSubstance UI="D003513">Cycloheximide</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>EC 3.5.1.98</RegistryNumber>
+          <NameOfSubstance UI="D006655">Histone Deacetylases</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>I5Y540LHVR</RegistryNumber>
+          <NameOfSubstance UI="D003042">Cocaine</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <CommentsCorrectionsList>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Annu Rev Neurosci. 1995;18:463-95</RefSource>
+          <PMID Version="1">7605071</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Ann N Y Acad Sci. 2008 Oct;1139:350-7</RefSource>
+          <PMID Version="1">18991881</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neurochem. 2007 Apr;101(2):422-33</RefSource>
+          <PMID Version="1">17402971</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Prog Neuropsychopharmacol Biol Psychiatry. 2002 Jan;26(1):189-96</RefSource>
+          <PMID Version="1">11853111</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuropsychopharmacology. 2009 Dec;34(13):2642-54</RefSource>
+          <PMID Version="1">19727068</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>BMC Cancer. 2010;10:383</RefSource>
+          <PMID Version="1">20663132</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Synapse. 2002 Sep 15;45(4):220-9</RefSource>
+          <PMID Version="1">12125043</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Psychiatry Neurosci. 2000 Mar;25(2):125-36</RefSource>
+          <PMID Version="1">10740986</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Open Biochem J. 2012;6:31-9</RefSource>
+          <PMID Version="1">22550546</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuropsychopharmacology. 2006 Jul;31(7):1462-74</RefSource>
+          <PMID Version="1">16237390</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Korean J Physiol Pharmacol. 2011 Dec;15(6):389-95</RefSource>
+          <PMID Version="1">22359477</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuroreport. 1998 Aug 3;9(11):2485-8</RefSource>
+          <PMID Version="1">9721919</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Vet Res Commun. 2011 Jan;35(1):21-34</RefSource>
+          <PMID Version="1">21104123</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biochemistry. 1994 Apr 12;33(14):4197-206</RefSource>
+          <PMID Version="1">8155635</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neuroimmune Pharmacol. 2012 Dec;7(4):835-42</RefSource>
+          <PMID Version="1">22926418</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Neurodegener. 2010 Nov 10;5:49</RefSource>
+          <PMID Version="1">21067594</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Anesthesiology. 1999 Oct;91(4):1014-24</RefSource>
+          <PMID Version="1">10519505</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Pharmacol. 2004 Feb;65(2):319-25</RefSource>
+          <PMID Version="1">14742673</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Brain Res. 2008 Dec 30;1246:1-10</RefSource>
+          <PMID Version="1">18950606</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Cell Mol Med. 2009 Sep;13(9B):3591-615</RefSource>
+          <PMID Version="1">19602036</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Brain Res. 2010 Feb 16;1314:235-52</RefSource>
+          <PMID Version="1">19914222</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Biol Chem. 1995 Oct 20;270(42):24740-4</RefSource>
+          <PMID Version="1">7559590</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biochem Biophys Res Commun. 2006 Feb 3;340(1):29-34</RefSource>
+          <PMID Version="1">16338217</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biol Psychiatry. 2005 Jun 15;57(12):1573-82</RefSource>
+          <PMID Version="1">15953495</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nat Med. 1996 Nov;2(11):1225-9</RefSource>
+          <PMID Version="1">8898749</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neurochem Res. 2011 Apr;36(4):686-92</RefSource>
+          <PMID Version="1">21399909</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Pharmacol. 2000 Dec;58(6):1197-203</RefSource>
+          <PMID Version="1">11093754</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Oncogene. 2001 Apr 30;20(19):2438-52</RefSource>
+          <PMID Version="1">11402339</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuropharmacology. 1998 Oct-Nov;37(10-11):1419-29</RefSource>
+          <PMID Version="1">9849677</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Brain Res. 1997 Sep 12;768(1-2):294-300</RefSource>
+          <PMID Version="1">9369328</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Saudi Med J. 2010 Apr;31(4):389-93</RefSource>
+          <PMID Version="1">20383415</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Brain. 2009;2:3</RefSource>
+          <PMID Version="1">19183502</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuropsychopharmacology. 2010 Mar;35(4):913-28</RefSource>
+          <PMID Version="1">20010550</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Brain Res. 1995 Oct 23;696(1-2):140-4</RefSource>
+          <PMID Version="1">8574661</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Curr Opin Neurobiol. 1996 Apr;6(2):243-51</RefSource>
+          <PMID Version="1">8725967</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Drug Alcohol Depend. 1995 May;38(2):95-137</RefSource>
+          <PMID Version="1">7671769</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Psychopharmacology (Berl). 2010 Jun;210(2):121-35</RefSource>
+          <PMID Version="1">20352414</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neurosci Lett. 2003 Jul 3;344(3):209-11</RefSource>
+          <PMID Version="1">12812842</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Free Radic Res. 2010 Jun;44(6):645-54</RefSource>
+          <PMID Version="1">20370559</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Pharmacol. 2010 Jul;78(1):58-68</RefSource>
+          <PMID Version="1">20385708</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neurosci Lett. 2006 Mar 6;395(2):98-102</RefSource>
+          <PMID Version="1">16300892</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Pharmacology. 1997 Dec;55(6):292-8</RefSource>
+          <PMID Version="1">9413858</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuron. 2005 Oct 20;48(2):303-14</RefSource>
+          <PMID Version="1">16242410</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Psychopharmacology (Berl). 2002 Feb;159(4):361-9</RefSource>
+          <PMID Version="1">11823888</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Cell. 2006 Jan 20;21(2):283-94</RefSource>
+          <PMID Version="1">16427017</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Brain Res Mol Brain Res. 2005 Jun 13;137(1-2):258-62</RefSource>
+          <PMID Version="1">15950784</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Life Sci. 2010 Dec 18;87(23-26):707-14</RefSource>
+          <PMID Version="1">21034749</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Eur Neuropsychopharmacol. 2009 Apr;19(4):238-49</RefSource>
+          <PMID Version="1">18990547</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biosci Trends. 2011;5(1):17-22</RefSource>
+          <PMID Version="1">21422596</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neurochem. 2003 Dec;87(6):1321-32</RefSource>
+          <PMID Version="1">14713289</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Synapse. 2008 Sep;62(9):710-3</RefSource>
+          <PMID Version="1">18566976</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biol Psychiatry. 2010 Oct 15;68(8):697-703</RefSource>
+          <PMID Version="1">20579973</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>EMBO J. 1997 Apr 15;16(8):2096-107</RefSource>
+          <PMID Version="1">9155035</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Expert Opin Drug Discov. 2009 May;4(5):577-86</RefSource>
+          <PMID Version="1">23485087</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Jpn J Pharmacol. 2000 Dec;84(4):412-7</RefSource>
+          <PMID Version="1">11202613</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>NIDA Res Monogr. 1990;105:175-81</RefSource>
+          <PMID Version="1">1831539</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Eur J Pharmacol. 1996 Feb 15;297(1-2):187-91</RefSource>
+          <PMID Version="1">8851182</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuroscience. 2004;127(1):233-42</RefSource>
+          <PMID Version="1">15219685</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Ann N Y Acad Sci. 2002 Jun;965:47-54</RefSource>
+          <PMID Version="1">12105084</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Ann N Y Acad Sci. 2005 Aug;1053:482-90</RefSource>
+          <PMID Version="1">16179556</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Curr Opin Pharmacol. 2009 Feb;9(1):74-80</RefSource>
+          <PMID Version="1">19155191</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biochem Cell Biol. 2008 Jun;86(3):217-26</RefSource>
+          <PMID Version="1">18523482</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Am J Psychiatry. 2007 Aug;164(8):1149-59</RefSource>
+          <PMID Version="1">17671276</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neurochem. 1994 Feb;62(2):496-501</RefSource>
+          <PMID Version="1">8294911</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nat Rev Mol Cell Biol. 2001 Aug;2(8):599-609</RefSource>
+          <PMID Version="1">11483993</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biochem Biophys Res Commun. 2005 Jun 17;331(4):1421-8</RefSource>
+          <PMID Version="1">15883033</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Am J Physiol Cell Physiol. 2003 Feb;284(2):C439-46</RefSource>
+          <PMID Version="1">12388069</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Am J Physiol Renal Physiol. 2009 Jul;297(1):F114-24</RefSource>
+          <PMID Version="1">19403642</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Ann N Y Acad Sci. 2003 May;993:362; discussion 387-93</RefSource>
+          <PMID Version="1">12853329</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Synapse. 1993 Sep;15(1):33-8</RefSource>
+          <PMID Version="1">8310423</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuropsychopharmacology. 2010 Jan;35(2):445-63</RefSource>
+          <PMID Version="1">19794406</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neurochem. 2002 Feb;80(3):501-11</RefSource>
+          <PMID Version="1">11905996</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neuroreport. 2000 Apr 7;11(5):947-9</RefSource>
+          <PMID Version="1">10790861</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Pharmacol Ther. 2007 Nov;116(2):306-21</RefSource>
+          <PMID Version="1">17868902</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neurochem. 2005 Dec;95(5):1481-94</RefSource>
+          <PMID Version="1">16219028</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Prog Neurobiol. 2008 Sep;86(1):1-21</RefSource>
+          <PMID Version="1">18602444</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neurosci Lett. 2008 Aug 15;441(1):72-6</RefSource>
+          <PMID Version="1">18599214</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Anal Biochem. 1976 May 7;72:248-54</RefSource>
+          <PMID Version="1">942051</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>FASEB J. 2005 Sep;19(11):1441-50</RefSource>
+          <PMID Version="1">16126911</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neurochem. 2002 May;81(3):624-35</RefSource>
+          <PMID Version="1">12065671</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Hum Exp Toxicol. 2011 Mar;30(3):192-8</RefSource>
+          <PMID Version="1">20488840</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neurol Res. 2009 Feb;31(1):17-22</RefSource>
+          <PMID Version="1">19228458</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Biol Chem. 2011 Aug 12;286(32):28556-66</RefSource>
+          <PMID Version="1">21669872</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Ann N Y Acad Sci. 2001 Jun;937:74-92</RefSource>
+          <PMID Version="1">11458541</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>FASEB J. 1995 Apr;9(7):552-8</RefSource>
+          <PMID Version="1">7737465</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Neurochem Res. 1996 Nov;21(11):1411-5</RefSource>
+          <PMID Version="1">8947931</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int Immunopharmacol. 2006 Aug;6(8):1331-40</RefSource>
+          <PMID Version="1">16782547</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Psychopharmacology (Berl). 2010 Feb;208(2):245-56</RefSource>
+          <PMID Version="1">19936712</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Brain Res. 2001 May 4;900(1):103-9</RefSource>
+          <PMID Version="1">11325352</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Cell Biol. 2005 Aug;25(16):6964-79</RefSource>
+          <PMID Version="1">16055710</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nitric Oxide. 2011 Oct 30;25(3):344-9</RefSource>
+          <PMID Version="1">21742048</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Neurochem. 2010 Oct;115(1):112-22</RefSource>
+          <PMID Version="1">20633205</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biochim Biophys Acta. 2012 Jun;1820(6):701-11</RefSource>
+          <PMID Version="1">21640163</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Pharmacol. 2002 Apr;61(4):800-5</RefSource>
+          <PMID Version="1">11901219</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Biol Chem. 2008 Jun 13;283(24):16293-8</RefSource>
+          <PMID Version="1">18397880</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Mol Neurosci. 2007;31(3):281-7</RefSource>
+          <PMID Version="1">17726232</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Mol Biol. 2011 Dec 16;414(5):749-64</RefSource>
+          <PMID Version="1">22051513</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Eur J Neurosci. 2005 Aug;22(4):939-48</RefSource>
+          <PMID Version="1">16115217</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Ann N Y Acad Sci. 2002 Jun;965:180-92</RefSource>
+          <PMID Version="1">12105094</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Stem Cells Dev. 2006 Apr;15(2):165-74</RefSource>
+          <PMID Version="1">16646663</PMID>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D003042" MajorTopicYN="N">Cocaine</DescriptorName>
+          <QualifierName UI="Q000008" MajorTopicYN="Y">administration &amp; dosage</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D003513" MajorTopicYN="N">Cycloheximide</DescriptorName>
+          <QualifierName UI="Q000494" MajorTopicYN="N">pharmacology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D018765" MajorTopicYN="N">Dopamine Uptake Inhibitors</DescriptorName>
+          <QualifierName UI="Q000008" MajorTopicYN="N">administration &amp; dosage</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006655" MajorTopicYN="N">Histone Deacetylases</DescriptorName>
+          <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+          <QualifierName UI="Q000378" MajorTopicYN="Y">metabolism</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009569" MajorTopicYN="N">Nitric Oxide</DescriptorName>
+          <QualifierName UI="Q000378" MajorTopicYN="Y">metabolism</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D016716" MajorTopicYN="N">PC12 Cells</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011500" MajorTopicYN="N">Protein Synthesis Inhibitors</DescriptorName>
+          <QualifierName UI="Q000494" MajorTopicYN="N">pharmacology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D012333" MajorTopicYN="N">RNA, Messenger</DescriptorName>
+          <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D051381" MajorTopicYN="N">Rats</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017450" MajorTopicYN="N">Receptors, Opioid, mu</DescriptorName>
+          <QualifierName UI="Q000378" MajorTopicYN="Y">metabolism</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+      <OtherID Source="NLM">PMC3520874</OtherID>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>04</Month>
+          <Day>23</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>11</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>4</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>epublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23079001</ArticleId>
+        <ArticleId IdType="pii">2050-6511-13-11</ArticleId>
+        <ArticleId IdType="doi">10.1186/2050-6511-13-11</ArticleId>
+        <ArticleId IdType="pmc">PMC3520874</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23079002</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>05</Month>
+        <Day>17</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2012</Year>
+        <Month>12</Month>
+        <Day>05</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1472-6491</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>25</Volume>
+            <Issue>6</Issue>
+            <PubDate>
+              <Year>2012</Year>
+              <Month>Dec</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Reproductive biomedicine online</Title>
+          <ISOAbbreviation>Reprod. Biomed. Online</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>PRM1 variant rs35576928 (Arg&gt;Ser) is associated with defective spermatogenesis in the Chinese Han population.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>627-34</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.rbmo.2012.09.005</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S1472-6483(12)00536-6</ELocationID>
+        <Abstract>
+          <AbstractText>Protamine genes play important roles in DNA packaging within the sperm nucleus. In order to evaluate the association of PRM1, PRM2, KIT and KITLG variants with susceptibility to severely defective spermatogenesis, 309 male infertility patients (199 cases with non-obstructive azoospermia and 110 cases with severe oligozoospermia) and 377 controls were recruited in the Chinese Han population. This study genotyped 38 single-nucleotide polymorphisms (SNP) in PRM1, PRM2, KIT and KITLG using Sequenom iplex. The results showed that PRM1 variant rs35576928 (p.R34S) was significantly associated with severe oligozoospermia and played a protective role against the disease (P=0.0079, Bonferroni correction, OR 0.426). The dominant model (variant-containing genotypes) of the SNP was confirmed to protect against the occurrence of oligozoospermia (P=0.0078, Bonferroni correction, OR 0.387). Haplotype analysis of PRM1 and PRM2 in combination exhibited that haplotype TACCGGC exhibited a significant protective effect against the occurrence of oligozoospermia when compared with controls (P=0.002, Bonferroni correction, OR 0.602). Haplotype TACCTGC was strongly associated with risk of the clinical phenotype severe oligozoospermia (P=0.002, Bonferroni correction, OR 2.716). The findings indicated that PRM1 variant rs35576928 (p.R34S) was associated with severely defective spermatogenesis in the Chinese Han population. Male spermatogenic failure may be associated with gene variants. We demonstrated whether such genetic variation of PRM1 and PRM2 affected clinicopathological characteristics and conferred susceptibility to this entity. In this study, we found that PRM1 variant rs35576928 (Arg&gt;Ser) played a protective role against severe oligozoospermia. The dominant model analysis (variant-containing genotypes) confirmed that the SNP was a risk factor of a spermatogenesis defect. Haplotype analysis of PRM1 and PRM2 showed that TACCGGC was a common factor protecting against severe oligozoospermia, while the haplotype TACCTGC was strongly associated with the risk of the severe oligozoospmeria. Our findings indicate that the PRM1 variant rs35576928 (Arg&gt;Ser) is associated with spermatogenesis defect in the Chinese Han population.</AbstractText>
+          <CopyrightInformation>Copyright © 2012 Reproductive Healthcare Ltd. Published by Elsevier Ltd. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>He</LastName>
+            <ForeName>Xiao-Jin</ForeName>
+            <Initials>XJ</Initials>
+            <AffiliationInfo>
+              <Affiliation>Reproductive Medicine Center, Department of Obstetrics and Gynecology, The First Affiliated Hospital of Anhui Medical University, Hefei 230032, China.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Ruan</LastName>
+            <ForeName>Jian</ForeName>
+            <Initials>J</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Du</LastName>
+            <ForeName>Wei-Dong</ForeName>
+            <Initials>WD</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Chen</LastName>
+            <ForeName>Gang</ForeName>
+            <Initials>G</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Zhou</LastName>
+            <ForeName>Yuan</ForeName>
+            <Initials>Y</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Xu</LastName>
+            <ForeName>Song</ForeName>
+            <Initials>S</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Zuo</LastName>
+            <ForeName>Xian-Bo</ForeName>
+            <Initials>XB</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Cao</LastName>
+            <ForeName>Yun-Xia</ForeName>
+            <Initials>YX</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Zhang</LastName>
+            <ForeName>Xue-Jun</ForeName>
+            <Initials>XJ</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>16</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>Netherlands</Country>
+        <MedlineTA>Reprod Biomed Online</MedlineTA>
+        <NlmUniqueID>101122473</NlmUniqueID>
+        <ISSNLinking>1472-6483</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="C082073">PRM1 protein, human</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D011479">Protamines</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D019089">Stem Cell Factor</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="C068621">protamine 2</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>EC 2.7.10.1</RegistryNumber>
+          <NameOfSubstance UI="D019009">Proto-Oncogene Proteins c-kit</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <SupplMeshList>
+        <SupplMeshName Type="Disease" UI="C564665">Azoospermia, Nonobstructive</SupplMeshName>
+      </SupplMeshList>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000328" MajorTopicYN="N">Adult</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D019943" MajorTopicYN="N">Amino Acid Substitution</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D044466" MajorTopicYN="N">Asian Continental Ancestry Group</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D053713" MajorTopicYN="N">Azoospermia</DescriptorName>
+          <QualifierName UI="Q000097" MajorTopicYN="N">blood</QualifierName>
+          <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+          <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+          <QualifierName UI="Q000503" MajorTopicYN="N">physiopathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D016022" MajorTopicYN="N">Case-Control Studies</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D002681" MajorTopicYN="N" Type="Geographic">China</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005799" MajorTopicYN="N">Genes, Dominant</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D056726" MajorTopicYN="N">Genetic Association Studies</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D020022" MajorTopicYN="N">Genetic Predisposition to Disease</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006239" MajorTopicYN="N">Haplotypes</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009845" MajorTopicYN="N">Oligospermia</DescriptorName>
+          <QualifierName UI="Q000097" MajorTopicYN="N">blood</QualifierName>
+          <QualifierName UI="Q000235" MajorTopicYN="Y">genetics</QualifierName>
+          <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+          <QualifierName UI="Q000503" MajorTopicYN="N">physiopathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D020641" MajorTopicYN="Y">Polymorphism, Single Nucleotide</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011479" MajorTopicYN="N">Protamines</DescriptorName>
+          <QualifierName UI="Q000235" MajorTopicYN="Y">genetics</QualifierName>
+          <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D019009" MajorTopicYN="N">Proto-Oncogene Proteins c-kit</DescriptorName>
+          <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+          <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D012720" MajorTopicYN="N">Severity of Illness Index</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D013091" MajorTopicYN="N">Spermatogenesis</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D019089" MajorTopicYN="N">Stem Cell Factor</DescriptorName>
+          <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+          <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>07</Month>
+          <Day>16</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>08</Month>
+          <Day>26</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>06</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>5</Month>
+          <Day>18</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23079002</ArticleId>
+        <ArticleId IdType="pii">S1472-6483(12)00536-6</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.rbmo.2012.09.005</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">23079004</PMID>
+      <DateCompleted>
+        <Year>2013</Year>
+        <Month>08</Month>
+        <Day>08</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2013</Year>
+        <Month>02</Month>
+        <Day>04</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1873-5711</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>23</Volume>
+            <Issue>1</Issue>
+            <PubDate>
+              <Year>2013</Year>
+              <Month>Feb</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Journal of electromyography and kinesiology : official journal of the International Society of Electrophysiological Kinesiology</Title>
+          <ISOAbbreviation>J Electromyogr Kinesiol</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Altered trunk muscle coordination during rapid trunk flexion in people in remission of recurrent low back pain.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>173-81</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1016/j.jelekin.2012.09.003</ELocationID>
+        <ELocationID EIdType="pii" ValidYN="Y">S1050-6411(12)00163-0</ELocationID>
+        <Abstract>
+          <AbstractText>People with a history of low back pain (LBP) are at high risk to encounter additional LBP episodes. During LBP remission, altered trunk muscle control has been suggested to negatively impact spinal health. As sudden LBP onset is commonly reported during trunk flexion, the aim of the current study is to investigate whether dynamic trunk muscle recruitment is altered in LBP remission. Eleven people in remission of recurrent LBP and 14 pain free controls performed cued trunk flexion during a loaded and unloaded condition. Electromyographic activity was recorded from paraspinal (lumbar and thoracic erector spinae, latissimus dorsi, deep and superficial multifidus) and abdominal muscles (obliquus internus, externus and rectus abdominis) with surface and fine-wire electrodes. LBP participants exhibited higher levels of co-contraction of flexor/extensor muscles, lower agonistic abdominal and higher antagonistic paraspinal muscle activity than controls, both when data were analyzed in grouped and individual muscle behavior. A sub-analysis in people with unilateral LBP (n = 6) pointed to opposing changes in deep and superficial multifidus in relation to the pain side. These results suggest that dynamic trunk muscle control is modified during LBP remission, and might possibly increase spinal load and result in earlier muscle fatigue due to intensified muscle usage. These negative consequences for spinal health could possibly contribute to recurrence of LBP.</AbstractText>
+          <CopyrightInformation>Copyright © 2012 Elsevier Ltd. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>D'hooge</LastName>
+            <ForeName>Roseline</ForeName>
+            <Initials>R</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Rehabilitation Sciences and Physiotherapy, Ghent University, Ghent, Belgium. roseline.dhooge@ugent.be</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Hodges</LastName>
+            <ForeName>Paul</ForeName>
+            <Initials>P</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Tsao</LastName>
+            <ForeName>Henry</ForeName>
+            <Initials>H</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Hall</LastName>
+            <ForeName>Leanne</ForeName>
+            <Initials>L</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Macdonald</LastName>
+            <ForeName>David</ForeName>
+            <Initials>D</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Danneels</LastName>
+            <ForeName>Lieven</ForeName>
+            <Initials>L</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>15</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>England</Country>
+        <MedlineTA>J Electromyogr Kinesiol</MedlineTA>
+        <NlmUniqueID>9109125</NlmUniqueID>
+        <ISSNLinking>1050-6411</ISSNLinking>
+      </MedlineJournalInfo>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000222" MajorTopicYN="Y">Adaptation, Physiological</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D000328" MajorTopicYN="N">Adult</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017116" MajorTopicYN="N">Low Back Pain</DescriptorName>
+          <QualifierName UI="Q000503" MajorTopicYN="Y">physiopathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D009119" MajorTopicYN="Y">Muscle Contraction</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D018482" MajorTopicYN="N">Muscle, Skeletal</DescriptorName>
+          <QualifierName UI="Q000503" MajorTopicYN="Y">physiopathology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D004856" MajorTopicYN="Y">Postural Balance</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D016059" MajorTopicYN="Y">Range of Motion, Articular</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D012008" MajorTopicYN="N">Recurrence</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D012075" MajorTopicYN="N">Remission, Spontaneous</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D060726" MajorTopicYN="N">Torso</DescriptorName>
+          <QualifierName UI="Q000503" MajorTopicYN="Y">physiopathology</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2012</Year>
+          <Month>04</Month>
+          <Day>06</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="revised">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>10</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2012</Year>
+          <Month>09</Month>
+          <Day>16</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2012</Year>
+          <Month>10</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2013</Year>
+          <Month>8</Month>
+          <Day>9</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">23079004</ArticleId>
+        <ArticleId IdType="pii">S1050-6411(12)00163-0</ArticleId>
+        <ArticleId IdType="doi">10.1016/j.jelekin.2012.09.003</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+</PubmedArticleSet>
