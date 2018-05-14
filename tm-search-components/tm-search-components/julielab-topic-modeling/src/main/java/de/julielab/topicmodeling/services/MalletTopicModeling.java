@@ -200,7 +200,7 @@ public class MalletTopicModeling implements ITopicModeling {
 			};
 			List<Document> docs = new ArrayList<Document>();
 			File[] xmlFiles = file.listFiles(xmlFilter);
-			int fileCount = xmlConfig.getInteger("read.parametes.files.number", xmlFiles.length);
+			int fileCount = xmlConfig.getInteger("evaluate.heldout.files.number", xmlFiles.length);
 			for (int i = 0; i < fileCount; i++) {
 				LOGGER.info("Attempt to read " + xmlFiles[i].getName() + ", no. " + (i + 1)  
 							+ " of total " + fileCount);
@@ -672,7 +672,9 @@ public class MalletTopicModeling implements ITopicModeling {
 		return id;
 	}
 	
-	// Filters simple numbers that does not have real semantics
+	/**
+	* Filters simple numbers that does not have real semantics
+	*/
 	public boolean isNotNum (String lemmaString) {
 		String num = "\\s?-?\\d+.?\\d*\\s?";
 		if (lemmaString.matches(num)) {
@@ -710,15 +712,8 @@ public class MalletTopicModeling implements ITopicModeling {
 			LOGGER.debug("Attempting to map Mallet DocID " + i + " to PMID " + dociId);
 			model.ModelIdpubmedId.put(i, dociId);
 		}
-//		mapMalletIdToPubmedId(docs, model);
 		LOGGER.info("Mallet document IDs are mapped to PubMed citation IDs (PMIDs)");
 	}
-	
-//	public void evaluate(Model model, InstanceList heldoutDoc) {
-//		MarginalProbEstimator estimator = model.malletModel.getProbEstimator();
-//		double value = estimator.evaluateLeftToRight(
-//				heldoutDoc, numParticles, usingResampling, docProbabilityStream);
-//	}
 
 //	public List<Topic> buildTopicsFromModel(Model model, InstanceList instances) {
 //		ParallelTopicModel malletModel = model.malletModel;
