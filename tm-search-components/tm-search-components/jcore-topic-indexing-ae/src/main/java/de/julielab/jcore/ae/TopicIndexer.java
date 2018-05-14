@@ -46,6 +46,11 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 	 * index, and the Mallet model object
 	 */
 	public static final String PARAM_TOPIC_MODEL_FILE_NAME = "TopicModelFile";
+	
+	/**
+	 * Number of topic words that is collected from the Mallet model for each topic
+	 */
+	public static final String PARAM_NUM_STORED_TOPIC_WORDS = "NumStoredTopicWords";
 
 	/**
 	 * Number of the top topic words that can be used e.g. for displaying as 
@@ -62,6 +67,8 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 	private String model_config;
 	@ConfigurationParameter(name = PARAM_TOPIC_MODEL_FILE_NAME, mandatory = true)
 	private String model_file;
+	@ConfigurationParameter(name = PARAM_NUM_STORED_TOPIC_WORDS, mandatory = true)
+	private int numWords;
 	@ConfigurationParameter(name = PARAM_NUM_DISPLAYED_TOPIC_WORDS, mandatory = true)
 	private int displayedTopicWords;
 	@ConfigurationParameter(name = PARAM_STORE_IN_MODEL_INDEX, mandatory = true)
@@ -70,6 +77,7 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 	MalletTopicModeling tm;
 	Model savedModel;
 	XMLConfiguration xmlConfig;
+	Object[][] topWords;
 
 	/**
 	 * Loads model configuration and serialized model and checks whether to populate the 
@@ -81,10 +89,12 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 			model_config = (String) aContext.getConfigParameterValue(PARAM_TOPIC_MODEL_CONFIG);
 			model_file = (String) aContext.getConfigParameterValue(PARAM_TOPIC_MODEL_FILE_NAME);
 			toModelIndex = (boolean) aContext.getConfigParameterValue(PARAM_STORE_IN_MODEL_INDEX);
+			numWords = (Integer) aContext.getConfigParameterValue(PARAM_NUM_STORED_TOPIC_WORDS);
 			displayedTopicWords = (Integer) aContext.getConfigParameterValue(PARAM_NUM_DISPLAYED_TOPIC_WORDS);
 			tm = new MalletTopicModeling();
 			xmlConfig = tm.loadConfig(model_config);
 			savedModel = tm.readModel(model_file);
+			topWords = savedModel.malletModel.getTopWords(numWords);
 			savedModel.index = new HashMap<>();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -102,7 +112,7 @@ public class TopicIndexer extends JCasAnnotator_ImplBase {
 			String modelVersion = savedModel.modelVersion;
 			String docId = JCoReTools.getDocId(aJCas);
 			if (!savedModel.ModelIdpubmedId.containsValue(docId)) {
-				Map<String, List<Topic>> result = tm.inferLabel(aJCas, savedModel, xmlConfig);
+				Map<String, List<Topic>> result = tm.inferLabel(aJCas, savedModel, xmlConfig, topWords);
 				DoubleArray topicWeights = new DoubleArray(aJCas, result.size());
 				IntegerArray topicIds = new IntegerArray(aJCas, result.size());
 				StringArray topicWords = new StringArray(aJCas, displayedTopicWords);

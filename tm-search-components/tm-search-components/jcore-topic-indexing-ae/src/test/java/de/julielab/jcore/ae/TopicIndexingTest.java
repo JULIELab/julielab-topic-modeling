@@ -41,7 +41,6 @@ public class TopicIndexingTest {
 		CollectionReader xmiReader = CollectionReaderFactory.createReader(
 				"de.julielab.jcore.reader.xmi.desc.jcore-xmi-reader", 
 				XmiCollectionReader.PARAM_INPUTDIR, "src/test/resources/xmi_data"
-//				XmiCollectionReader.PARAM_INPUTDIR, "D:/testprocessed_lemma/"
 				);
 		// TODO remove xmi-splitter-types and document-meta-extension-types
 		JCas jCas = JCasFactory.createJCas("de.julielab.jcore.types.jcore-document-meta-pubmed-types", 
@@ -79,15 +78,16 @@ public class TopicIndexingTest {
 			JCas filledJCas = aCAS.getJCas();
 			
 			AnalysisEngine topicIndexer = AnalysisEngineFactory.createEngine(
-					"de.julielab.jcore.ae.topiclabeling.desc.jcore-topic-indexing-ae", 
+					"de.julielab.jcore.ae.topicindexing.desc.jcore-topic-indexing-ae", 
 					TopicIndexer.PARAM_TOPIC_MODEL_CONFIG, "src/test/resources/config_template.xml", 
 					TopicIndexer.PARAM_TOPIC_MODEL_FILE_NAME, "src/test/resources/test_topic_model.ser",
+					TopicIndexer.PARAM_NUM_STORED_TOPIC_WORDS, 100,
 					TopicIndexer.PARAM_NUM_DISPLAYED_TOPIC_WORDS, 5, 
 					TopicIndexer.PARAM_STORE_IN_MODEL_INDEX, false
 					);
 			topicIndexer.process(filledJCas);
 			FSIterator<Annotation> iterator = filledJCas.getAnnotationIndex(DocumentTopics.type).iterator();
-			while(iterator.hasNext()){
+			while(iterator.hasNext()) {
 				DocumentTopics topics = (DocumentTopics) iterator.next();
 				for (int i = 0; i < topics.getTopicWords().size(); i++) {
 					assertNotNull(topics.getTopicWords(i));
@@ -112,9 +112,10 @@ public class TopicIndexingTest {
 			CAS aCAS = jCas.getCas();
 			
 			AnalysisEngine topicIndexer = AnalysisEngineFactory.createEngine(
-					"de.julielab.jcore.ae.topiclabeling.desc.jcore-topic-indexing-ae", 
+					"de.julielab.jcore.ae.topicindexing.desc.jcore-topic-indexing-ae", 
 					TopicIndexer.PARAM_TOPIC_MODEL_CONFIG, "src/test/resources/config_template.xml", 
 					TopicIndexer.PARAM_TOPIC_MODEL_FILE_NAME, "src/test/resources/test_topic_model.ser",
+					TopicIndexer.PARAM_NUM_STORED_TOPIC_WORDS, 100,
 					TopicIndexer.PARAM_NUM_DISPLAYED_TOPIC_WORDS, 5, 
 					TopicIndexer.PARAM_STORE_IN_MODEL_INDEX, true
 					);
@@ -153,9 +154,10 @@ public class TopicIndexingTest {
 			CAS aCAS = jCas.getCas();
 			
 			AnalysisEngine topicIndexer = AnalysisEngineFactory.createEngine(
-					"de.julielab.jcore.ae.topiclabeling.desc.jcore-topic-indexing-ae", 
+					"de.julielab.jcore.ae.topicindexing.desc.jcore-topic-indexing-ae", 
 					TopicIndexer.PARAM_TOPIC_MODEL_CONFIG, "src/test/resources/config_template.xml", 
 					TopicIndexer.PARAM_TOPIC_MODEL_FILE_NAME, "src/test/resources/test_topic_model.ser",
+					TopicIndexer.PARAM_NUM_STORED_TOPIC_WORDS, 100,
 					TopicIndexer.PARAM_NUM_DISPLAYED_TOPIC_WORDS, 5, 
 					TopicIndexer.PARAM_STORE_IN_MODEL_INDEX, true
 					);
@@ -179,5 +181,4 @@ public class TopicIndexingTest {
 				e.printStackTrace();
 			}
 	}
-
 }
