@@ -20,7 +20,7 @@
     <dependency>
     	<groupId>de.julielab</groupId>
     	<artifactId>julielab-java-utilities</artifactId>
-    	<version>1.0.0-SNAPSHOT</version>
+    	<version>1.0.0</version>
     </dependency>
     <dependency>
     	<groupId>de.julielab</groupId>
@@ -70,12 +70,6 @@
 		<version>2.3.0-SNAPSHOT</version>
 	</dependency>
 	<dependency>
-		<groupId>de.mukis</groupId>
-		<artifactId>de.mukis.jama</artifactId>
-		<version>2.0.0-SNAPSHOT</version>
-		<classifier>jar-with-dependencies</classifier>
-	</dependency>
-	<dependency>
 		<groupId>de.julielab</groupId>
 		<artifactId>jcore-xmi-db-reader</artifactId>
 		<version>2.3.0-SNAPSHOT</version>
@@ -88,7 +82,7 @@
 	<dependency>
 		<groupId>de.julielab</groupId>
 		<artifactId>costosys</artifactId>
-		<version>1.0.2-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</dependency>
   </dependencies>  
   	<build>
@@ -144,6 +138,6 @@
   	<artifactId>julielab-parent</artifactId>
   	<version>2.0.1</version>
   </parent>
-  <version>1.8.1</version>
+  <version>1.8.7-SNAPSHOT</version>
   <artifactId>julielab-topic-modeling</artifactId>
 </project>

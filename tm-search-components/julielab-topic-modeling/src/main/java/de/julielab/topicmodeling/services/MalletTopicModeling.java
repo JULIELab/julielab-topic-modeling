@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 import java.util.Map.Entry;
 
 import org.apache.commons.configuration2.XMLConfiguration;
@@ -42,7 +41,6 @@ import cc.mallet.pipe.iterator.ArrayIterator;
 import cc.mallet.topics.ParallelTopicModel;
 import cc.mallet.topics.TopicInferencer;
 import cc.mallet.types.Alphabet;
-import cc.mallet.types.IDSorter;
 import cc.mallet.types.Instance;
 import cc.mallet.types.InstanceList;
 import cc.mallet.types.TokenSequence;
@@ -202,7 +200,7 @@ public class MalletTopicModeling implements ITopicModeling {
 			};
 			List<Document> docs = new ArrayList<Document>();
 			File[] xmlFiles = file.listFiles(xmlFilter);
-			int fileCount = xmlConfig.getInteger("read.parametes.files.number", xmlFiles.length);
+			int fileCount = xmlConfig.getInteger("evaluate.heldout.files.number", xmlFiles.length);
 			for (int i = 0; i < fileCount; i++) {
 				LOGGER.info("Attempt to read " + xmlFiles[i].getName() + ", no. " + (i + 1)  
 							+ " of total " + fileCount);
@@ -262,8 +260,8 @@ public class MalletTopicModeling implements ITopicModeling {
 		List<Document> docs = new ArrayList<>();
 		try {
 			CollectionReader xmiDbReader = CollectionReaderFactory.createReaderFromPath(
-					"src/main/resources/de/julielab/jcore/reader/xmi/XmiDBReader.xml", 
-//					"../configs/XmiDBReader.xml",
+//					"src/main/resources/de/julielab/jcore/reader/xmi/XmiDBReader.xml", 
+					"configs_db/XmiDBReader.xml",
 					SubsetReaderConstants.PARAM_ADDITIONAL_TABLES, 
 					token, TableReaderConstants.PARAM_TABLE, subset);
 			JCas jCas = JCasFactory.createJCas("de.julielab.jcore.types.jcore-all-types");
@@ -501,6 +499,20 @@ public class MalletTopicModeling implements ITopicModeling {
 	}
 	
 	public Map<String, List<Topic>> inferLabel(Document doc, Model model, XMLConfiguration xmlConfig) {
+		LOGGER.warn("Argument topicWords is not set in inferLabel! This may cause low performance "
+				+ "during infering labels!");
+		int numWords = model.malletModel.wordsPerTopic;
+		Object[][] topicWords = model.malletModel.getTopWords(numWords);
+		Map<String, List<Topic>> result = inferLabel(doc, model, xmlConfig, topicWords);
+		return result;
+	}
+	
+	/**
+	 * The argument topicWords has to be passed here due to performance reasons; this object is
+	 * available in every model.malletModel by the method getTopWords()  
+	 */
+	public Map<String, List<Topic>> inferLabel(Document doc, Model model, XMLConfiguration xmlConfig,
+											Object[][] topicWords) {
 		int numIterations = xmlConfig.getInt("infer.parameters.parameter.numIterations");
 		int thinning = xmlConfig.getInt("infer.parameters.parameter.savingInterval");
 		int burnIn = xmlConfig.getInt("infer.parameters.parameter.firstSavingInterval");
@@ -509,6 +521,9 @@ public class MalletTopicModeling implements ITopicModeling {
 		TopicInferencer inferencer = malletModel.getInferencer();
 		
 		TokenSequence jcorePreprocessed = (TokenSequence) doc.preprocessedData;
+		if (jcorePreprocessed.isEmpty()) {
+			LOGGER.warn("Document tokens are empty");
+		}
 		List<TokenSequence> jcorePreprocessedList = new ArrayList<>();
 		jcorePreprocessedList.add(jcorePreprocessed);
 //		List<TokenSequence> jcorePreprocessedList = (List<TokenSequence>) doc.preprocessedData;
@@ -521,7 +536,6 @@ public class MalletTopicModeling implements ITopicModeling {
 		for (int i = 0; i < distribution.length; i++) {
 			Topic topic = new Topic();
 			topic.probability = distribution[i];
-			Object[][] topicWords = malletModel.getTopWords(distribution.length);
 			topic.topicWords = topicWords[i];
 			topic.id = i;
 			topics.add(topic);
@@ -530,7 +544,12 @@ public class MalletTopicModeling implements ITopicModeling {
 		return result;
 	}
 	
-	public Map<String, List<Topic>> inferLabel(JCas cas, Model model, XMLConfiguration xmlConfig) {
+	/**
+	 * The argument topicWords has to be passed here due to performance reasons; this object is
+	 * available in every model.malletModel by the method getTopWords()  
+	 */
+	public Map<String, List<Topic>> inferLabel(JCas cas, Model model, XMLConfiguration xmlConfig,
+											Object[][] topicWords) {
 		TokenSequence docLemmata = getLemmata(cas);
 		Document doc = new Document();
 		doc.id = JCoReTools.getDocId(cas);
@@ -538,77 +557,7 @@ public class MalletTopicModeling implements ITopicModeling {
 		Map<String, List<Topic>> result = inferLabel(doc, model, xmlConfig);
 		return result;
 	}
-	
-	public Map<String, List<Topic>> inferTopicWordLabel(Document doc, Model model, XMLConfiguration xmlConfig) {
-		int numIterations = xmlConfig.getInt("infer.parameters.parameter.numIterations");
-		int thinning = xmlConfig.getInt("infer.parameters.parameter.savingInterval");
-		int burnIn = xmlConfig.getInt("infer.parameters.parameter.firstSavingInterval");
-		int topicWordsDisplayed = xmlConfig.getInt("infer.parameters.parameter.topicWordsDisplayed");
-		Map<String, List<Topic>> result = new HashMap<String, List<Topic>>();
-		ParallelTopicModel malletModel = model.malletModel;
-		TopicInferencer inferencer = malletModel.getInferencer();
 		
-		List<Document> docs = new ArrayList<Document>();
-		docs.add(doc);
-		InstanceList instances = preprocess(docs);
-		Instance instance = instances.get(0);
-		
-		double[] distribution = inferencer.getSampledDistribution(
-				instance, numIterations, thinning, burnIn);
-		List<Topic> topics = new ArrayList<Topic>();
-		for (int i = 0; i < distribution.length; i++) {
-			Topic topic = new Topic();
-			topic.probability = distribution[i];
-			Object[][] topicWords = malletModel.getTopWords(topicWordsDisplayed);
-			topic.id = i;
-			topic.topicWords = topicWords[i];
-			topics.add(topic);
-		}
-		result.put(doc.id, topics);
-		return result;
-	}
-	
-	public HashMap<Integer, Double> inferTopicWeightLabel(Document doc, Model model, XMLConfiguration xmlConfig) {
-		int numIterations = xmlConfig.getInt("infer.parameters.parameter.numIterations");
-		int thinning = xmlConfig.getInt("infer.parameters.parameter.savingInterval");
-		int burnIn = xmlConfig.getInt("infer.parameters.parameter.firstSavingInterval");
-		int topicWordsDisplayed = xmlConfig.getInt("infer.parameters.parameter.topicWordsDisplayed");
-		HashMap<Integer, Double> result = new HashMap<Integer, Double>();
-		ParallelTopicModel malletModel = model.malletModel;
-		TopicInferencer inferencer = malletModel.getInferencer();
-		List<TokenSequence> docList = new ArrayList<TokenSequence>();
-		ArrayList<TreeSet<IDSorter>> topicSortedDocument = malletModel.getTopicDocuments(0);
-		if(model.pubmedIdModelId.containsKey(doc.id)) {
-			Iterator<IDSorter> iterator = topicSortedDocument.get(model.pubmedIdModelId.
-				get(doc.id)).iterator();
-			int rank = 0;
-			while (iterator.hasNext() && rank < topicWordsDisplayed) {
-				IDSorter idCountPair = iterator.next();
-				result.put(idCountPair.getID(), idCountPair.getWeight());
-				rank++;
-			}
-			return result;
-		} else {
-			TokenSequence preprocessedData = (TokenSequence) doc.preprocessedData;
-			docList.add(preprocessedData);
-			InstanceList instances = malletPreprocess(docList);
-			Instance instance = instances.get(0);
-			double[] distribution = inferencer.getSampledDistribution(
-					instance, numIterations, thinning, burnIn);
-			List<Topic> topics = new ArrayList<Topic>();
-			for (int i = 0; i < distribution.length; i++) {
-				Topic topic = new Topic();
-				topic.probability = distribution[i];
-				Object[][] topicWords = malletModel.getTopWords(topicWordsDisplayed);
-				topic.id = i;
-				topic.topicWords = topicWords[i];
-				topics.add(topic);
-				result.put(topic.id, topic.probability);
-			}
-		return result;
-		}
-	}
-	
 	public Model readMalletModel(File file) {
 		Model model = new Model();
 		try {
@@ -661,7 +610,6 @@ public class MalletTopicModeling implements ITopicModeling {
 			JCas jCas = JCasFactory.createJCas();
 			for (int i = 0; i < docs.size(); i++) {
 				String sentences = docs.get(i).text;
-				System.out.println(sentences);
 				LOGGER.info("Attempt to process document: " + docs.get(i).id);
 				if (sentences != null) {
 					jCas.setDocumentText(sentences);
@@ -724,7 +672,9 @@ public class MalletTopicModeling implements ITopicModeling {
 		return id;
 	}
 	
-	// Filters simple numbers that does not have real semantics
+	/**
+	* Filters simple numbers that does not have real semantics
+	*/
 	public boolean isNotNum (String lemmaString) {
 		String num = "\\s?-?\\d+.?\\d*\\s?";
 		if (lemmaString.matches(num)) {
@@ -762,15 +712,8 @@ public class MalletTopicModeling implements ITopicModeling {
 			LOGGER.debug("Attempting to map Mallet DocID " + i + " to PMID " + dociId);
 			model.ModelIdpubmedId.put(i, dociId);
 		}
-//		mapMalletIdToPubmedId(docs, model);
 		LOGGER.info("Mallet document IDs are mapped to PubMed citation IDs (PMIDs)");
 	}
-	
-//	public void evaluate(Model model, InstanceList heldoutDoc) {
-//		MarginalProbEstimator estimator = model.malletModel.getProbEstimator();
-//		double value = estimator.evaluateLeftToRight(
-//				heldoutDoc, numParticles, usingResampling, docProbabilityStream);
-//	}
 
 //	public List<Topic> buildTopicsFromModel(Model model, InstanceList instances) {
 //		ParallelTopicModel malletModel = model.malletModel;
@@ -807,23 +750,5 @@ public class MalletTopicModeling implements ITopicModeling {
 		 Alphabet alphabet = malletModel.getAlphabet();
 		 Object[] alphabetArray = alphabet.toArray();
 		 return alphabetArray;
-	 }
-	 
-	 public void mergeIndexes(String indexesFilesDir, String mergedIndexesFilesName) {
-//		 Model modelWithAllIndexes = new Model();
-		 Model topicModel = new Model();
-		 HashMap<String, List<Topic>> mergedIndex = new HashMap<>();
-		 File dir = new File (indexesFilesDir);
-		 if(dir.isDirectory()) {
-			 String[] modelFileNames = dir.list();
-			 for (int i = 0; i < modelFileNames.length; i++) {
-				 topicModel = readModel(indexesFilesDir + modelFileNames[i]);
-				 mergedIndex.putAll(topicModel.index); 
-			 }
-			 topicModel.index = mergedIndex;
-			 
-//			 modelWithAllIndexes.index = mergedIndex;
-			 saveModel(topicModel, mergedIndexesFilesName);
-		 }
 	 }
 }
