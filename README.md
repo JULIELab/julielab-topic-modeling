@@ -6,9 +6,8 @@ This is the master thesis implementation work of Philipp Sieg. The major goal is
 4. evaluating models both qualitatively and quantitatively. 
 
 The folder tm-search-components contains the final versions of each component. The topic modeling functionality depends strongly
-on an implementation from the Machine Learning for Language Toolkit (MALLET, McCallum 2002). The NLP preprocessing components 
-are taken from JCoRe (Hahn et al. 2016).
-The implementation of this topic modeling module consists of 5 components: 
+on an implementation from the Machine Learning for Language Toolkit, v. 2.0.9 (MALLET; McCallum 2002). The NLP preprocessing components are taken from JCoRe, v. 2.3.0-SNAPSHOT (Hahn et al. 2016).
+The implementation of this topic modeling module consists of 5 components, deployed as Maven projects, v. 3.5.2: 
 
 #### julielab-topic-modeling
 This is the main project and the main dependency for the other projects. It implements the major functions for reading,
