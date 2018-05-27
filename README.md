@@ -28,7 +28,8 @@ function provided by julielab-topic-modeling.
 This is a UIMA typesystem for the jcore-topic-indexing-ae defining the features of a topic label.
 
 #### jcore-tm-index-merger
-This component merges a set of serialized model files from multiple jcore-topic-indexing-ae processes.
+This is a simple commanline-tool that merges a set of serialized model files from multiple jcore-topic-indexing-ae processes.
+
 
 Additionally, the project provides configuration templates you can find here: https://github.com/JULIELab/julielab-topic-modeling/tree/master/configs
 
