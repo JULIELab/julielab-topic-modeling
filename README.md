@@ -5,21 +5,30 @@ This is the master thesis implementation work of Philipp Sieg. The major goal is
 3. using the indexes for information retrieval, and 
 4. evaluating models both qualitatively and quantitatively. 
 
-The folder tm-search-components contains the final versions of each component. The topic modeling functionality depends strongly on 
-an implementation from the Machine Learning for Language Toolkit (MALLET, McCallum 2002). The NLP preprocessing components are 
-taken from JCoRe (Hahn et al. 2016).
+The folder tm-search-components contains the final versions of each component. The topic modeling functionality depends strongly
+on an implementation from the Machine Learning for Language Toolkit (MALLET, McCallum 2002). The NLP preprocessing components 
+are taken from JCoRe (Hahn et al. 2016).
 The implementation of this topic modeling module consists of 5 components: 
 
 #### julielab-topic-modeling
 This is the main project and the main dependency for the other projects. It implements the major functions for reading,
-preprocessing, training, and infering labels to documents. It contains the TopicModelGenerator, a commandline-tool for generating
-topic models on a given data set. The data set my be read from a file system or a database.
+preprocessing, training, and infering labels to documents. It contains the TopicModelGenerator, a commandline-tool for
+generating topic models on a given data set. The data set my be read from a file system or a database.
 
 #### julielab-tm-heldout-evaluator
-This is a simple commandline-tool for calculating and monitoring a held-out document evaluation. It uses the MALLET implementation of the left-to-right algorithm developed by Wallach (2008).
+This is a simple commandline-tool for calculating and monitoring a held-out document evaluation. It uses the MALLET
+implementation of the left-to-right algorithm developed by Wallach (2008).
 
 #### jcore-topic-indexing-ae
+This is a JCoRe-component that infers labels to new documents and stores them in an index. The AE saves the index along with the
+whole model in a serialized object file at the end of the indexing process. The index is intended to be used by the search 
+function provided by julielab-topic-modeling.
 
+#### jcore-topicmodeling-types
+This is a UIMA typesystem for the jcore-topic-indexing-ae defining the features of a topic label.
+
+#### jcore-tm-index-merger
+This component merges a set of serialized model files from multiple jcore-topic-indexing-ae processes.
 
 Additionally, the project provides configuration templates you can find here: https://github.com/JULIELab/julielab-topic-modeling/tree/master/configs
 
