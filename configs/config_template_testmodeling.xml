@@ -24,7 +24,11 @@
 		<corpus>
 			<subset>
 				<table>testmodeling</table>
+				<reset>false</reset>
 			</subset>
+			<costosys>
+				<configurationFile>costosys.xml</configurationFile>
+			</costosys>
 		</corpus>
 	</train>
 	<search>
