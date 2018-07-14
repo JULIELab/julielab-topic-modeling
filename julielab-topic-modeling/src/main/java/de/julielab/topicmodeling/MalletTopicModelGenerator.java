@@ -89,16 +89,14 @@ public class MalletTopicModelGenerator {
 			throws ConfigurationException {
 		MalletTopicModeling tm = new MalletTopicModeling();
 		XMLConfiguration xmlConfig = tm.loadConfig(configFileName);
-		String subset = xmlConfig.getString("train.corpus.subset.table");
-		LOGGER.info("Start reading from DB table " + subset);
-		List<Document> docs = tm.readXmiDb(tm, subset);
-		List<TokenSequence> allDocLemmata = new ArrayList<TokenSequence>();
-		List<String> allDocIds = new ArrayList<String>();
+		List<Document> docs = tm.readXmiDb(tm, xmlConfig);
+		List<TokenSequence> allDocLemmata = new ArrayList<>();
+		List<String> allDocIds = new ArrayList<>();
 		for (int i = 0; i < docs.size(); i++) {
 			Document doc = docs.get(i);
 			TokenSequence docLemmata = (TokenSequence) doc.preprocessedData;
 			allDocLemmata.add(docLemmata);
-			String docId = (String) doc.id;
+			String docId = doc.id;
 			allDocIds.add(docId);
 		}
 		LOGGER.info("Start preprocessing with Mallet pipes");

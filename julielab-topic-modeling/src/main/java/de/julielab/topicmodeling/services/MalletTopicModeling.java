@@ -17,10 +17,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import de.julielab.jcore.reader.xmi.XmiDBReader;
+import org.apache.commons.configuration2.HierarchicalConfiguration;
 import org.apache.commons.configuration2.XMLConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.FSIterator;
@@ -254,16 +257,22 @@ public class MalletTopicModeling implements ITopicModeling {
 		}
 	}		
 	
-	public List<Document> readXmiDb(MalletTopicModeling tm, String subset) {
-		List<String> token = new ArrayList<>();
-		token.add("de.julielab.jcore.types.Token");
+	public List<Document> readXmiDb(MalletTopicModeling tm, HierarchicalConfiguration<ImmutableNode> configuration) {
+		String subset = configuration.getString("train.corpus.subset.table");
+		boolean resetSubset = configuration.getBoolean("train.corpus.subset.reset", false);
+		String costosysConfigFile = configuration.getString("train.corpus.costosys.configurationFile");
+		LOGGER.info("Start reading from DB table {} with CoStoSys configuration file {}", subset, costosysConfigFile);
+		List<String> annotationsToLoad = new ArrayList<>();
+		annotationsToLoad.add(Token.class.getCanonicalName());
 		List<Document> docs = new ArrayList<>();
 		try {
-			CollectionReader xmiDbReader = CollectionReaderFactory.createReaderFromPath(
-//					"src/main/resources/de/julielab/jcore/reader/xmi/XmiDBReader.xml", 
-					"configs_db/XmiDBReader.xml",
-					SubsetReaderConstants.PARAM_ADDITIONAL_TABLES, 
-					token, TableReaderConstants.PARAM_TABLE, subset);
+			CollectionReader xmiDbReader = CollectionReaderFactory.createReader(
+			        "de.julielab.jcore.reader.xmi.desc.jcore-xmi-db-reader",
+					SubsetReaderConstants.PARAM_ADDITIONAL_TABLES,
+					annotationsToLoad, TableReaderConstants.PARAM_TABLE, subset,
+					TableReaderConstants.PARAM_COSTOSYS_CONFIG_NAME, costosysConfigFile,
+					XmiDBReader.PARAM_READS_BASE_DOCUMENT, true,
+					SubsetReaderConstants.PARAM_RESET_TABLE, resetSubset);
 			JCas jCas = JCasFactory.createJCas("de.julielab.jcore.types.jcore-all-types");
 			CAS aCAS = jCas.getCas();
 			while (xmiDbReader.hasNext()) {
@@ -651,6 +660,8 @@ public class MalletTopicModeling implements ITopicModeling {
 		while (tokenIterator.hasNext()) {
 				Token token = (Token) tokenIterator.get();
 				Lemma lemma = token.getLemma();
+				if (lemma == null)
+					throw new IllegalArgumentException("The input UIMA CAS is missing lemma annotations set to the tokens as the lemma feature.");
 				String lemmaString = lemma.getValue();
 				if (isNotNum(lemmaString) && isNotPunctuation(lemmaString)) { 
 					lemmata.add(lemmaString);
