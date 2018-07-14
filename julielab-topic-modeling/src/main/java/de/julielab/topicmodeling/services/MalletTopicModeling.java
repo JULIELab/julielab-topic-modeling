@@ -263,7 +263,7 @@ public class MalletTopicModeling implements ITopicModeling {
 		String costosysConfigFile = configuration.getString("train.corpus.costosys.configurationFile");
 		LOGGER.info("Start reading from DB table {} with CoStoSys configuration file {}", subset, costosysConfigFile);
 		List<String> annotationsToLoad = new ArrayList<>();
-		annotationsToLoad.add("_data_xmi." + Token.class.getCanonicalName());
+		annotationsToLoad.add(Token.class.getCanonicalName());
 		List<Document> docs = new ArrayList<>();
 		try {
 			CollectionReader xmiDbReader = CollectionReaderFactory.createReader(
