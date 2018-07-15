@@ -284,7 +284,7 @@ public class MalletTopicModeling implements ITopicModeling {
 				TokenSequence docLemmata = tm.getLemmata(filledjCas);
 				doc.preprocessedData = docLemmata;
 				doc.id = tm.getId(filledjCas);
-				LOGGER.info("Data for doc " + doc.id + ": " + doc.preprocessedData);
+				LOGGER.debug("Data for doc " + doc.id + ": " + doc.preprocessedData);
 				docs.add(doc);
 			}
 		} catch (Exception e) {
