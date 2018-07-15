@@ -259,7 +259,7 @@ public class MalletTopicModeling implements ITopicModeling {
 	
 	public List<Document> readXmiDb(MalletTopicModeling tm, HierarchicalConfiguration<ImmutableNode> configuration) {
 		String subset = configuration.getString("train.corpus.subset.table");
-        String annotationPostgresSchema = configuration.getString("train.corpus.subset.table.annotationpgschema");
+        String annotationPostgresSchema = configuration.getString("train.corpus.subset.annotationpgschema");
 		boolean resetSubset = configuration.getBoolean("train.corpus.subset.reset", false);
 		String costosysConfigFile = configuration.getString("train.corpus.costosys.configurationFile");
 		LOGGER.info("Start reading from DB table {} with CoStoSys configuration file {}", subset, costosysConfigFile);
