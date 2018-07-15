@@ -259,6 +259,7 @@ public class MalletTopicModeling implements ITopicModeling {
 	
 	public List<Document> readXmiDb(MalletTopicModeling tm, HierarchicalConfiguration<ImmutableNode> configuration) {
 		String subset = configuration.getString("train.corpus.subset.table");
+        String annotationPostgresSchema = configuration.getString("train.corpus.subset.table.annotationpgschema");
 		boolean resetSubset = configuration.getBoolean("train.corpus.subset.reset", false);
 		String costosysConfigFile = configuration.getString("train.corpus.costosys.configurationFile");
 		LOGGER.info("Start reading from DB table {} with CoStoSys configuration file {}", subset, costosysConfigFile);
@@ -272,7 +273,8 @@ public class MalletTopicModeling implements ITopicModeling {
 					annotationsToLoad, TableReaderConstants.PARAM_TABLE, subset,
 					TableReaderConstants.PARAM_COSTOSYS_CONFIG_NAME, costosysConfigFile,
 					XmiDBReader.PARAM_READS_BASE_DOCUMENT, true,
-					SubsetReaderConstants.PARAM_RESET_TABLE, resetSubset);
+					SubsetReaderConstants.PARAM_RESET_TABLE, resetSubset,
+                    SubsetReaderConstants.PARAM_ADDITONAL_TABLES_STORAGE_PG_SCHEMA, annotationPostgresSchema);
 			JCas jCas = JCasFactory.createJCas("de.julielab.jcore.types.jcore-all-types");
 			CAS aCAS = jCas.getCas();
 			while (xmiDbReader.hasNext()) {
