@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class MalletTopicModelInformer {
     public static void main(String args[]) throws IOException {
-        if (args.length != 2) {
+        if (args.length != 3) {
             System.err.println("Usage: " + MalletTopicModelInformer.class.getSimpleName() + " <mode: doctopics|docIdMap> <model path> <output-file>");
             System.exit(1);
         }
