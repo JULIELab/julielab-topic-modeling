@@ -16,7 +16,7 @@ public class MalletTopicModelInformer {
             System.exit(1);
         }
         MalletTopicModeling malletTopicModeling = new MalletTopicModeling();
-        Model model = malletTopicModeling.readMalletModel(new File(args[0]));
+        Model model = malletTopicModeling.readModel(args[0]);
         printTopicsPerDocumentToFile(new File(args[1]), model);
     }
 
