@@ -16,8 +16,4 @@ public class Model implements java.io.Serializable {
 	public String modelVersion;
 	public HashMap<String, List<Topic>> index;
 	
-	public Model() {
-		// TODO Auto-generated constructor stub
-	}
-
 }
