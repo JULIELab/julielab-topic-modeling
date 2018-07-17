@@ -1,12 +1,6 @@
 package de.julielab.topicmodeling.services;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import de.julielab.java.utilities.FileUtilities;
 import de.julielab.jcore.reader.xmi.XmiDBReader;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
 import org.apache.commons.configuration2.XMLConfiguration;
@@ -189,7 +184,7 @@ public class MalletTopicModeling implements ITopicModeling {
 
     public void saveModel(Model model, String filename) {
         try {
-            FileOutputStream fileOut = new FileOutputStream(filename);
+            OutputStream fileOut = FileUtilities.getOutputStreamToFile(new File(filename));
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(model);
             out.close();
@@ -582,7 +577,7 @@ public class MalletTopicModeling implements ITopicModeling {
     public Model readModel(String filename) {
         Model model = new Model();
         try {
-            FileInputStream fileIn = new FileInputStream(filename);
+            InputStream fileIn = FileUtilities.getInputStreamFromFile(new File(filename));
             ObjectInputStream in = new ObjectInputStream(fileIn);
             model = (Model) in.readObject();
             in.close();
