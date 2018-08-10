@@ -1,0 +1,6 @@
+MalletTopicModelGenerator.log
+.idea
+*iml
+/target
+src/test/resources/test_topic_model.ser
+src/test/resources/test_model

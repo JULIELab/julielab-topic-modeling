@@ -25,6 +25,7 @@
 			<subset>
 				<table>testmodeling</table>
 				<reset>false</reset>
+				<annotationpgschema>_data_xmi</annotationpgschema>
 			</subset>
 			<costosys>
 				<configurationFile>costosys.xml</configurationFile>

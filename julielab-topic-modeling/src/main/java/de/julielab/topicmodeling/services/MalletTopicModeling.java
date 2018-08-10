@@ -644,7 +644,6 @@ public class MalletTopicModeling implements ITopicModeling {
         InstanceList instances = new InstanceList(new SerialPipes(pipeList));
         ArrayIterator dataListIterator = new ArrayIterator(data);
         instances.addThruPipe(dataListIterator);
-        LOGGER.info("MALLeT instances created");
         return instances;
     }
 
